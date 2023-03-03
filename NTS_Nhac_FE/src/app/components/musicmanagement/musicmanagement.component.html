@@ -1,127 +1,21 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link rel="stylesheet"href="D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_FE\bootstrap\css\bootstrap.css">
-</head>
-
-<body>
-
-  <div class="box-function">
-    <form>
-      <div class="input_left">
-        <input id="contentmusic" type="text" placeholder="Tìm kiếm loại nhạc theo nội dung" />
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 sidebar">
+      <h2>NTS - Nhạc</h2>
+      <h4>Nhạc</h4>
+    </div>
+    <div class="col-9 main-content">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+         <span>QUẢN LÝ NHẠC</span>
+        </div>
+      </nav>
+      <div>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
-      <div class="button_right">
-        <button type="submit" [disabled]="!searchcontentmusic">Tìm kiếm</button>
-        <button class="btn btn-primary">Làm mới</button>
-      </div>
-    </form>
-  </div>
-  <div class="table_music">
-    <div>
-      <label class="lable_total">Tổng số {{total}} loại nhạc</label>
-      <button #open type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Thêm
-        mới</button>
-    </div>
-
-    <table id="listmusic" style="border-collapse:collapse;" class="table">
-      <tr>
-        <th>STT</th>
-        <th>Xử lý</th>
-        <th>Tình trạng</th>
-        <th>Loại nhạc</th>
-        <th>Thời gian phát</th>
-        <th>Ngày phát</th>
-        <th>Nội dung</th>
-      </tr>
-      <tr *ngFor="let music of ListMusic; let i = index">
-        <td>{{i + 1}}</td>
-        <td>
-          <button class="btn">Cập nhật</button>
-          <button class="btn">Xóa</button>
-        </td>
-        <td *ngIf="music.status">Đang hoạt động</td>
-        <td *ngIf="!music.status">Dừng hoạt động</td>
-        <td *ngIf="music.typeMusicCode.trim() == 'MUSICDAY'">Nhạc một lần</td>
-        <td *ngIf="music.typeMusicCode.trim() =='MUSICMONTH'">Nhạc theo tháng</td>
-        <td *ngIf="music.typeMusicCode.trim() =='MUSICYEAR'">Nhạc theo năm</td>
-        <td>{{music.timePlay}}</td>
-        <td>{{music.datePlay}}</td>
-        <td>{{music.musicContent}}</td>
-      </tr>
-    </table>
-    <div class="">
-      <button>Thêm loại nhạc</button> &nbsp;
-      <button>Chỉnh sửa loại nhạc</button>&nbsp;
-      <button>Xóa loại nhạc</button>&nbsp;
     </div>
   </div>
-  <!-- Thêm mới loại nhạc -->
-  <br>
-  <div>
-    <div>
-      <h2>THÊM MỚI LOẠI NHẠC</h2>
-    </div>
-    <div>
-      <p>Loại Nhạc</p>
-        <input type="radio" id="musicday" name="" value="MUSICDAY">
-        <label for="day">Nhạc một lần</label>
-        <input type="radio" id="musicmonth" name="" value="MUSICMONTH">
-        <label for="month">Nhạc theo tháng</label>
-      <input type="radio" id="musicyear" name="" value="MUSICYEAR">
-        <label for="year">Nhạc theo năm</label>
-
-      <form id="musicdayform">
-        <h5>Nhạc một lần</h5>
-        <div>
-          <label>Thời gian phát</label><br>
-          <input placeholder="HH"> :
-          <input placeholder="MM">
-        </div>
-        <div>
-          <label>Ngày phát</label><br>
-          <input placeholder="dd/mm/yyyy">
-        </div>
-        <div>
-          <label>Nội dung</label> <br>
-          <input>
-        </div>
-        <div>
-          <label>Ngày trong tuần</label><br>
-          <input type="checkbox" id="" name="" value="monday">
-            <label for="day">Thứ 2</label><br>
-            <input type="checkbox" id="" name="" value="tuesday">
-            <label for="month">Thứ 3</label><br>
-          <input type="checkbox" id="" name="" value="wednesday">
-            <label for="day">Thứ 4</label><br>
-            <input type="checkbox" id="" name="" value="thursday">
-            <label for="month">Thứ 5</label><br>
-          <input type="checkbox" id="" name="" value="friday">
-            <label for="day">Thứ 6</label><br>
-            <input type="checkbox" id="" name="" value="suturday">
-            <label for="month">Thứ 7</label><br>
-          <input type="checkbox" id="" name="" value="sunday">
-            <label for="day">Chủ nhật</label>
-        </div>
-        <div>
-          <label>Tình trạng</label> <br>
-          <input type="radio" id="" name="" value="true">
-            <label for="day">Đang hoạt động</label>
-            <input type="radio" id="" name="" value="false">
-            <label for="month">Dừng hoạt động</label>
-        </div>
-        <div>
-          <input id="FileUpload_FormFile" type="file" />
-        </div>
-      </form>
-
-    </div>
-    <div>
-
-    </div>
-  </div>
-
-</body>
-
-</html>
+</div>

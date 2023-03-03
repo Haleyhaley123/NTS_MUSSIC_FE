@@ -1,32 +1,28 @@
-.box-function {}
-.table_music{
-    margin: auto;
+.container-fluid{
+  
 }
 
-.input_left {
-    width: 200px;
+.sidebar{
+    background-color: #e03;
     float: left;
-    text-align: center;
+    width: 20%;
+    padding: 16px;
+    height: 100vh ;
+    color: white;
 }
-.button_right {
-    width: 200px;
-    float: right;
-    text-align: center;
-}
-.div_total{
-    float: left;
-}
+.main-content{
+  background-color: rgb(207, 170, 170);
+  padding: 16px;
+  width: 100%;
+  height: 100vh ;
 
-#listvisit {
-    border-collapse: separate;
-    border-color: blue;
 }
-
-.table,
-td,
-th {
-    border: 1px solid black;
+h2 {
+  font-size: 24px;
+  margin-left: 10px;
 }
-.btn{
-    
+h4{
+  background: #ea6464!important;
+  box-shadow: 0 10px 20px -10px #9c1f1f;
+  font-weight: 500;
 }

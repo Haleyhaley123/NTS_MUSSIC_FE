@@ -7,6 +7,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './components/modal/modal.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ModalComponent } from './components/modal/modal.component';
     AppComponent,
     MusicmanagementComponent,
     PageNotFoundComponent,
-    ModalComponent
+    ModalComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
