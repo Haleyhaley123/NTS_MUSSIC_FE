@@ -1,0 +1,100 @@
+<div class="box-function">
+  <form>
+    <div class="input_left">
+      <input id="contentmusic" type="text" placeholder="Tìm kiếm loại nhạc theo nội dung" />
+    </div>
+    <div class="button_right">
+      <button type="submit" [disabled]="!searchcontentmusic">Tìm kiếm</button>
+      <button>Làm mới</button>
+    </div>
+  </form>
+</div>
+<div class="table_music">
+  <div>
+    <label class="lable_total">Tổng số {{total}} loại nhạc</label>
+    <button #open type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Thêm
+      mới</button>
+  </div>
+
+  <table id="listmusic" style="border-collapse:collapse;" class="table">
+    <tr>
+      <th>STT</th>
+      <th>Xử lý</th>
+      <th>Tình trạng</th>
+      <th>Loại nhạc</th>
+      <th>Thời gian phát</th>
+      <th>Ngày phát</th>
+      <th>Nội dung</th>
+    </tr>
+    <tr *ngFor="let music of ListMusic; let i = index">
+      <td>{{i + 1}}</td>
+      <td>
+        <button class="btn">Cập nhật</button>
+        <button class="btn">Xóa</button>
+      </td>
+      <td *ngIf="music.status">Đang hoạt động</td>
+      <td *ngIf="!music.status">Dừng hoạt động</td>
+      <td *ngIf="music.typeMusicCode.trim() == 'MUSICDAY'">Nhạc một lần</td>
+      <td *ngIf="music.typeMusicCode.trim() =='MUSICMONTH'">Nhạc theo tháng</td>
+      <td *ngIf="music.typeMusicCode.trim() =='MUSICYEAR'">Nhạc theo năm</td>
+      <td>{{music.timePlay}}</td>
+      <td>{{music.datePlay}}</td>
+      <td>{{music.musicContent}}</td>
+    </tr>
+  </table>
+  <div class="">
+    <button>Thêm loại nhạc</button> &nbsp;
+    <button>Chỉnh sửa loại nhạc</button>&nbsp;
+    <button>Xóa loại nhạc</button>&nbsp;
+  </div>
+</div>
+<!-- Thêm mới loại nhạc -->
+<br>
+<div>
+  <div>
+    <h2>THÊM MỚI LOẠI NHẠC</h2>
+  </div>
+  <div>
+    <p>Loại Nhạc</p>
+      <input type="checkbox" id="musicday" name="" value="MUSICDAY">
+      <label for="day">Nhạc một lần</label>
+      <input type="checkbox" id="musicmonth" name="" value="MUSICMONTH">
+      <label for="month">Nhạc theo tháng</label>
+      <input type="checkbox" id="musicyear" name="" value="MUSICYEAR">
+      <label for="year">Nhạc theo năm</label>
+
+    <form id="musicdayform">     
+      <h5>Nhạc một lần</h5>
+      <div>
+        <label>Thời gian phát</label><br>
+        <input placeholder="HH"> :
+        <input placeholder="MM">
+      </div>
+      <div>
+        <label>Ngày phát</label><br>
+        <input placeholder="dd/mm/yyyy">
+      </div>   
+      <div>
+        <label>Nội dung</label> <br>
+        <input>
+      </div>
+      <div>
+        <label>Tình trạng</label> <br>
+        <input type="radio" id="" name="" value="true">
+        <label for="day">Đang hoạt động</label>
+        <input type="radio" id="" name="" value="false">
+        <label for="month">Dừng hoạt động</label>
+      </div>  
+      <div>
+        <input id="FileUpload_FormFile" type="file" />       
+      </div>    
+    </form>
+    
+  </div>
+  <div>
+
+  </div>
+</div>
+
+
+

@@ -1,0 +1,12 @@
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\bin\Debug\net6.0\IMusicReponsitory.deps.json
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\bin\Debug\net6.0\IMusicReponsitory.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\bin\Debug\net6.0\ref\IMusicReponsitory.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\bin\Debug\net6.0\IMusicReponsitory.pdb
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.csproj.AssemblyReference.cache
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.AssemblyInfoInputs.cache
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.AssemblyInfo.cs
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.csproj.CoreCompileInputs.cache
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\ref\IMusicReponsitory.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\IMusicReponsitory\obj\Debug\net6.0\IMusicReponsitory.pdb

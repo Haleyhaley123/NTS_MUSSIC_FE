@@ -1,0 +1,32 @@
+.box-function {}
+.table_music{
+    margin: auto;
+}
+
+.input_left {
+    width: 200px;
+    float: left;
+    text-align: center;
+}
+.button_right {
+    width: 200px;
+    float: right;
+    text-align: center;
+}
+.div_total{
+    float: left;
+}
+
+#listvisit {
+    border-collapse: separate;
+    border-color: blue;
+}
+
+.table,
+td,
+th {
+    border: 1px solid black;
+}
+.btn{
+    
+}

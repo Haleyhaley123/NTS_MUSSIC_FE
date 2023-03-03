@@ -1,0 +1,12 @@
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\bin\Debug\net6.0\FileHepper.deps.json
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\bin\Debug\net6.0\FileHepper.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\bin\Debug\net6.0\ref\FileHepper.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\bin\Debug\net6.0\FileHepper.pdb
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.csproj.AssemblyReference.cache
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.AssemblyInfoInputs.cache
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.AssemblyInfo.cs
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.csproj.CoreCompileInputs.cache
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\ref\FileHepper.dll
+D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\FileHepper\obj\Debug\net6.0\FileHepper.pdb

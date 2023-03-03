@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "NTS_Nhac_Training/1.0.0": {
+        "runtime": {
+          "NTS_Nhac_Training.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NTS_Nhac_Training/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

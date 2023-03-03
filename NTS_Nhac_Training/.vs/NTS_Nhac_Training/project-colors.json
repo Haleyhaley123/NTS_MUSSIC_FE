@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "42f71ba7-2100-46f6-88af-148f2f96f89f": {
+      "ProjectGuid": "42f71ba7-2100-46f6-88af-148f2f96f89f",
+      "DisplayName": "NTS_Nhac_Training",
+      "ColorIndex": 0
+    },
+    "0e1cffe8-9b23-4e6d-9310-276d6f650b3f": {
+      "ProjectGuid": "0e1cffe8-9b23-4e6d-9310-276d6f650b3f",
+      "DisplayName": "IMusicReponsitory",
+      "ColorIndex": 1
+    },
+    "b6a601f3-791e-47ea-9637-12969ad8e1a2": {
+      "ProjectGuid": "b6a601f3-791e-47ea-9637-12969ad8e1a2",
+      "DisplayName": "MusicReponsitory",
+      "ColorIndex": 2
+    },
+    "4fec944c-52e0-4065-808f-77eb1e8a0a63": {
+      "ProjectGuid": "4fec944c-52e0-4065-808f-77eb1e8a0a63",
+      "DisplayName": "Reponsitory",
+      "ColorIndex": 3
+    },
+    "aea329c3-485f-4d0d-a8ba-b521bd12336c": {
+      "ProjectGuid": "aea329c3-485f-4d0d-a8ba-b521bd12336c",
+      "DisplayName": "FileHepper",
+      "ColorIndex": 4
+    },
+    "11e97413-6b1c-4181-81d6-c2e51dbaca9b": {
+      "ProjectGuid": "11e97413-6b1c-4181-81d6-c2e51dbaca9b",
+      "DisplayName": "Common",
+      "ColorIndex": 5
+    },
+    "2079c4a5-cbb4-41a9-8511-156a31ed5404": {
+      "ProjectGuid": "2079c4a5-cbb4-41a9-8511-156a31ed5404",
+      "DisplayName": "MusicManagement",
+      "ColorIndex": 6
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 7
+}
