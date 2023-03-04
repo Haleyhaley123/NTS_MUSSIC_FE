@@ -43,7 +43,7 @@ namespace MusicManagement.Controllers
         public async Task<ActionResult<MResponseModel>> UpdateMusic([FromBody] MusicDetail data)
         {
             MResponseModel response = new MResponseModel();
-            var result = await _iMusicReponsitory.AddMusicOrUpdateorDelete(data);
+            var result = await _iMusicReponsitory.AddMusicOrUpdate(data);
             response.Data = result;
             response.Status = MConstants.MessageAddMusicSuccess;
             return response;
@@ -52,7 +52,7 @@ namespace MusicManagement.Controllers
         public async Task<ActionResult<MResponseModel>> DeleteMusic(Guid id)
         {
             MResponseModel response = new MResponseModel();
-            var result = await _iMusicReponsitory.AddMusicOrUpdateorDelete(id);
+            var result = await _iMusicReponsitory.DeleteMusic(id);
             if (result == null)
             {
                 response.Status = MConstants.MessageDeleteFail;
