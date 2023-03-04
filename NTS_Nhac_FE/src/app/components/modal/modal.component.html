@@ -1,2 +1,101 @@
-<h2>Hello</h2>
-<button>press me</button>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div class="modal-header">
+        <h4 class="modal-title text-uppercase text-danger">Thêm mới loại nhạc</h4>
+        <button type="button" #closeModal class="close" style="color: brown;" (click)="closemodal()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body padding-15">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="form-group"><label class="form-label">
+                        <h4>Loại Nhạc</h4>
+                    </label>
+                    <div class="controls"><label class="radio">Nhạc một lần <input type="radio" name="Type"
+                                class="ng-valid ng-dirty ng-touched"><span class="checkround"></span></label><label
+                            class="radio ml-3">Nhạc theo tuần <input type="radio" name="Type"
+                                class="ng-valid ng-dirty ng-touched"><span class="checkround"></span></label><label
+                            class="radio ml-3">Nhạc theo năm <input type="radio" name="Type"
+                                class="ng-untouched ng-pristine ng-valid"><span class="checkround"></span></label></div>
+                </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="form-group"><label class="form-label">
+                        <h5>Nhạc một lần</h5><span class="text-danger text-strong">&nbsp;</span>
+                    </label><!----><!----><!---->
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-left">
+                        <div class="form-group">
+                            <div class="col-md-3 ms-auto">
+                                <label class="form-label">
+                                    <h5>Thời gian phát</h5>
+                                </label>
+                            </div>
+                            <div class="col-md-2 ms-auto">
+                                <label class="form-label">
+                                    <h5>Ngày phát</h5>
+                                </label>
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker">
+
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker>
+
+                                    </mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group"><label class="form-label">
+                                    <h5>Ngày Phát</h5><span class="text-danger text-strong">&nbsp;</span>
+                                </label><br><br>
+                                <div class="input-group"><input placeholder="dd/mm/yyyy" name="NgayPhat"
+                                        ngbdatepicker="" class="form-control ng-untouched ng-pristine ng-valid"><!---->
+                                    <div class="input-group-append"><span name="NgayPhat" class="dtp-icon"><i
+                                                class="far fa-calendar-alt"
+                                                style="color: #999; font-size: 30px;"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!----><!---->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group"><label class="form-label">
+                                    <h5>Nội dung</h5><span class="text-danger text-strong">&nbsp;</span>
+                                </label>
+                                <div class="controls"><textarea name="NoiDung" rows="5"
+                                        class="form-control ng-untouched ng-pristine ng-valid"></textarea></div>
+                            </div>
+                        </div><!----><!---->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 radio"><label class="form-label">
+                                <h5>Tình trạng</h5><span class="text-danger text-strong">&nbsp;</span>
+                            </label><br><label class="radio">Đang hoạt động <input type="radio" name="tinhTrang"
+                                    class="ng-untouched ng-pristine ng-valid"><span
+                                    class="checkround"></span></label><br><label class="radio">Dừng hoạt động <input
+                                    type="radio" name="tinhTrang" class="ng-untouched ng-pristine ng-valid"><span
+                                    class="checkround"></span></label></div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"><button class="btn btn-success btn-upload"><i
+                                    class="fas fa-arrow-up"></i> &nbsp;Thêm nhạc</button><input name="file" type="file"
+                                id="fileAttachInput" style="display: none;"></div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6"><!----></div>
+                    </div><br>
+                </div><!---->
+            </div>
+            <div class="modal-footer"><button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp;
+                    <span>Lưu</span></button><!----><button type="button" class="btn btn-success"><i
+                        class="fa fa-save"></i>&nbsp; <span>Lưu &amp; tiếp tục</span></button><!----><button
+                    type="button" class="btn btn-danger"><i class="fa fa-power-off"></i> &nbsp; <span> Đóng
+                    </span></button></div>
+        </div>
+    </div>
+</body>
+
+</html>

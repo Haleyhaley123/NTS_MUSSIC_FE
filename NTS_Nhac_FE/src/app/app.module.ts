@@ -9,7 +9,14 @@ import { ModalComponent } from './components/modal/modal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-import { MatDialogModule } from '@angular/material/dialog';
+import {MatDialogModule } from '@angular/material/dialog';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from  '@angular/material/core';
+import { TestComponent } from './components/test/test.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,13 +25,20 @@ import { MatDialogModule } from '@angular/material/dialog';
     PageNotFoundComponent,
     ModalComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    FormsModule, ReactiveFormsModule,MatDialogModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule, 
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

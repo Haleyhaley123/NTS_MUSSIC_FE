@@ -9,7 +9,7 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./musicmanagement.component.css']
 })
 export class MusicmanagementComponent{ 
-  constructor(private serverHttp: MusicService,private dialogRef: MatDialog ) { }
+  constructor(private serverHttp: MusicService,public dialog: MatDialog ) { }
   public searchcontentmusic = new FormGroup({
     content: new FormControl('')
   })
@@ -22,7 +22,8 @@ export class MusicmanagementComponent{
   } 
   //popup thêm mới
   openDialog(){
-    this.dialogRef.open(ModalComponent);
+    this.dialog.open(ModalComponent ,{
+      width: '350px'});
 
   }
   //tạo mới

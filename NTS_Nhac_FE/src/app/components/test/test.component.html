@@ -1,0 +1,89 @@
+<div class="modal-body padding-15">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="form-group"><label class="form-label">
+                    <h4>Loại Nhạc</h4>
+                </label>
+                <div class="controls"><label class="radio">Nhạc một lần <input type="radio" name="Type"
+                            class="ng-valid ng-dirty ng-touched"><span class="checkround"></span></label><label
+                        class="radio ml-3">Nhạc theo tuần <input type="radio" name="Type"
+                            class="ng-valid ng-dirty ng-touched"><span class="checkround"></span></label><label
+                        class="radio ml-3">Nhạc theo năm <input type="radio" name="Type"
+                            class="ng-untouched ng-pristine ng-valid"><span class="checkround"></span></label></div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="form-group"><label class="form-label">
+                    <h5>Nhạc một lần</h5><span class="text-danger text-strong">&nbsp;</span>
+                </label><!----><!----><!---->
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-left">
+                    <div class="form-group"><label class="form-label">
+                            <h5>Thời gian phát</h5>
+                        </label>
+                        <mat-datepicker name="ThoigianPhat" class="ng-untouched ng-pristine ng-valid">
+                            <fieldset>
+                                <div class="ngb-tp">
+                                    <div class="ngb-tp-input-container ngb-tp-hour"><button tabindex="-1" type="button"
+                                            class="btn btn-link"><span class="chevron ngb-tp-chevron"></span><span
+                                                class="sr-only">Increment hours</span></button><!----><input type="text"
+                                            maxlength="2" inputmode="numeric" placeholder="HH" aria-label="Hours"
+                                            class="ngb-tp-input form-control"><button tabindex="-1" type="button"
+                                            class="btn btn-link"><span
+                                                class="chevron ngb-tp-chevron bottom"></span><span
+                                                class="sr-only">Decrement hours</span></button><!----></div>
+                                    <div class="ngb-tp-spacer">:</div>
+                                    <div class="ngb-tp-input-container ngb-tp-minute"><button tabindex="-1"
+                                            type="button" class="btn btn-link"><span
+                                                class="chevron ngb-tp-chevron"></span><span class="sr-only">Increment
+                                                minutes</span></button><!----><input type="text" maxlength="2"
+                                            inputmode="numeric" placeholder="MM" aria-label="Minutes"
+                                            class="ngb-tp-input form-control"><button tabindex="-1" type="button"
+                                            class="btn btn-link"><span
+                                                class="chevron ngb-tp-chevron bottom"></span><span
+                                                class="sr-only">Decrement minutes</span></button><!----></div>
+                                    <!----><!----><!----><!---->
+                                </div>
+                            </fieldset>
+                        </mat-datepicker></div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group"><label class="form-label">
+                            <h5>Ngày Phát</h5><span class="text-danger text-strong">&nbsp;</span>
+                        </label><br><br>
+                        <div class="input-group"><input placeholder="dd/mm/yyyy" name="NgayPhat" ngbdatepicker=""
+                                class="form-control ng-untouched ng-pristine ng-valid"><!---->
+                            <div class="input-group-append"><span name="NgayPhat" class="dtp-icon"><i
+                                        class="far fa-calendar-alt" style="color: #999; font-size: 30px;"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!----><!---->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group"><label class="form-label">
+                            <h5>Nội dung</h5><span class="text-danger text-strong">&nbsp;</span>
+                        </label>
+                        <div class="controls"><textarea name="NoiDung" rows="5"
+                                class="form-control ng-untouched ng-pristine ng-valid"></textarea></div>
+                    </div>
+                </div><!----><!---->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 radio"><label class="form-label">
+                        <h5>Tình trạng</h5><span class="text-danger text-strong">&nbsp;</span>
+                    </label><br><label class="radio">Đang hoạt động <input type="radio" name="tinhTrang"
+                            class="ng-untouched ng-pristine ng-valid"><span class="checkround"></span></label><br><label
+                        class="radio">Dừng hoạt động <input type="radio" name="tinhTrang"
+                            class="ng-untouched ng-pristine ng-valid"><span class="checkround"></span></label></div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"><button class="btn btn-success btn-upload"><i
+                            class="fas fa-arrow-up"></i> &nbsp;Thêm nhạc</button><input name="file" type="file"
+                        id="fileAttachInput" style="display: none;"></div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6"><!----></div>
+            </div><br>
+        </div><!---->
+    </div>
+    <div class="modal-footer"><button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp;
+            <span>Lưu</span></button><!----><button type="button" class="btn btn-success"><i
+                class="fa fa-save"></i>&nbsp; <span>Lưu &amp; tiếp tục</span></button><!----><button type="button"
+            class="btn btn-danger"><i class="fa fa-power-off"></i> &nbsp; <span> Đóng </span></button></div>
+</div>
