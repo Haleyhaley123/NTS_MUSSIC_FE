@@ -44,10 +44,10 @@ export class MusicService {
     .pipe(catchError(this.handleError));
   }
   //xóa nhạc
-  public DeleteMusic(data: any){
-    const url = `${this.REST_API_SERVER}/music/Delete`;
+  public DeleteMusic(id: any){
+    const url = `${this.REST_API_SERVER}/music/Delete/${id}`;
     return this.httpClient
-    .post<any>(url,data,this.httpheader)
+    .post<any>(url,this.httpheader)
     .pipe(catchError(this.handleError));
   }
 

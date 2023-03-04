@@ -32,7 +32,8 @@
         <div class="table_music">
           <div>
             <label class="lable_total">Tổng số {{total}} loại nhạc</label>
-            <button #open type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Thêm
+            <button #open type="button" class="btn btn-primary" data-bs-toggle="modal" 
+            data-bs-target="#staticBackdrop" (click)="openDialog()" > Thêm
               mới</button>
           </div>
         
@@ -52,8 +53,8 @@
                 <tr *ngFor="let music of ListMusic; let i = index">
                     <td>{{i + 1}}</td>
                   <td>
-                    <button class="btn" (click)="deleteMusic(music.musicId)">Cập nhật</button>
-                    <button class="btn">Xóa</button>
+                    <button class="btn" >Cập nhật</button>
+                    <button class="btn" name="id" (click)="deleteMusic(music.musicId)">Xóa</button>
                   </td>
                   <td *ngIf="music.status">Đang hoạt động</td>
                   <td *ngIf="!music.status">Dừng hoạt động</td>

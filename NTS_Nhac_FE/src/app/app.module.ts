@@ -9,7 +9,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

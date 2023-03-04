@@ -48,7 +48,7 @@ namespace MusicManagement.Controllers
             response.Status = MConstants.MessageAddMusicSuccess;
             return response;
         }
-        [HttpPost("music/Delete")]
+        [HttpPost("music/Delete/{id}")]
         public async Task<ActionResult<MResponseModel>> DeleteMusic(Guid id)
         {
             MResponseModel response = new MResponseModel();

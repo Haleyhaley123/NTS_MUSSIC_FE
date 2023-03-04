@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicService } from 'src/app/services/music.service';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-musicmanagement',
   templateUrl: './musicmanagement.component.html',
   styleUrls: ['./musicmanagement.component.css']
 })
 export class MusicmanagementComponent{ 
-  constructor(private serverHttp: MusicService) { }
+  constructor(private serverHttp: MusicService,private dialogRef: MatDialog ) { }
   public searchcontentmusic = new FormGroup({
     content: new FormControl('')
   })
@@ -20,8 +21,8 @@ export class MusicmanagementComponent{
     
   } 
   //popup thêm mới
-  openModal(){
-    this.ispopupAdd = true;
+  openDialog(){
+    this.dialogRef.open(ModalComponent);
 
   }
   //tạo mới
@@ -38,8 +39,17 @@ export class MusicmanagementComponent{
     })
   }
   //xóa
-  deleteMusic(data:any){
-    this.serverHttp.DeleteMusic(data).subscribe();
+  deleteMusic(id: any){
+    this.serverHttp.DeleteMusic(id).subscribe((response) =>{
+      this.getlist();
+    });
+  }
+  //sửa 
+  updateMusic(data:any){
+  
+    this.serverHttp.UpdateMusic(data).subscribe((result)=>{
+     
+    });
   }
 
 }
