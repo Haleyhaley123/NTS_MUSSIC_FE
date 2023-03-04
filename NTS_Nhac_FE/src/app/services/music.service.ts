@@ -30,10 +30,10 @@ export class MusicService {
     .pipe(catchError(this.handleError));
   }
   // xem danh sách nhạc
-  public GetList(){
+  public GetList(data: any){
     const url = `${this.REST_API_SERVER}/music/List`;
     return this.httpClient
-    .get<any>(url,this.httpheader)
+    .post<any>(url,data,this.httpheader)
     .pipe(catchError(this.handleError));
   }
   //update UpdateMusic

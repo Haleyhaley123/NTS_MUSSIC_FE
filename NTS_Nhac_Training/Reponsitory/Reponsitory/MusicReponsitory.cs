@@ -49,17 +49,18 @@ namespace Reponsitory.Reponsitory
                 _dataBaseContext.MusicDetail.Update(music);
                 await _dataBaseContext.SaveChangesAsync();
                 return music.MusicId;
+
             }
+            
         }
        
-        public async Task<List<MusicDetail>> ListMusic()
+        public async Task<List<MusicDetail>> ListMusic(string content)
         {
-           return await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted).OrderByDescending(e => e.CreatedAt).ToListAsync();
-            //if (String.IsNullOrEmpty(content))
-            //{
-            //    return await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted).OrderByDescending(e => e.CreatedAt).ToListAsync();
-            //}
-            //return await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted && content.Contains(e.MusicContent)).OrderByDescending(e => e.CreatedAt).ToListAsync();
+            if (String.IsNullOrEmpty(content))
+            {
+                return await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted).OrderByDescending(e => e.CreatedAt).ToListAsync();
+            }
+            return await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted && e.MusicContent.Trim().ToUpper().Contains(content.Trim().ToUpper())).OrderByDescending(e => e.CreatedAt).ToListAsync();
         }
         public async Task<bool> DeleteMusic(Guid id)
         {

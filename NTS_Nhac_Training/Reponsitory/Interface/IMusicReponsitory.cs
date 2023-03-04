@@ -10,7 +10,7 @@ namespace Reponsitory.Interface
     public interface IMusicReponsitory
     {
         public Task<Guid> AddMusicOrUpdate(MusicDetail request);
-        public Task<List<MusicDetail>> ListMusic();
+        public Task<List<MusicDetail>> ListMusic(string content);
         public Task<bool> DeleteMusic(Guid id);
     }
 }

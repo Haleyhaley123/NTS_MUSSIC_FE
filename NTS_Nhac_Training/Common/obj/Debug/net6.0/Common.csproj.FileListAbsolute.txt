@@ -10,3 +10,15 @@ D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\Common\bin\Debug\net6.0\Common.pdb
 D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.dll
 D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\Common\obj\Debug\net6.0\ref\Common.dll
 D:\NhanTinSoft\NTS_Nhac\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.pdb
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\bin\Debug\net6.0\Common.deps.json
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\bin\Debug\net6.0\Common.dll
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\bin\Debug\net6.0\ref\Common.dll
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\bin\Debug\net6.0\Common.pdb
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.csproj.AssemblyReference.cache
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.AssemblyInfoInputs.cache
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.AssemblyInfo.cs
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.csproj.CoreCompileInputs.cache
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.dll
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\ref\Common.dll
+D:\NhanTinSoft\NTS_MUSSIC_FE\NTS_Nhac_Training\Common\obj\Debug\net6.0\Common.pdb

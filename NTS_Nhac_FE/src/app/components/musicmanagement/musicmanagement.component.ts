@@ -16,10 +16,7 @@ export class MusicmanagementComponent{
   public total : any;
   public ListMusic = null;
   ngOnInit(): void {
-    this.serverHttp.GetList().subscribe((result)=> {
-      this.ListMusic = result.data;
-      this.total = result.data.length;
-    })
+    this.getlist();
     
   } 
   //popup thêm mới
@@ -27,11 +24,22 @@ export class MusicmanagementComponent{
     this.ispopupAdd = true;
 
   }
+  //tạo mới
   createmusic(data: any){
-    this.serverHttp.CreateMusic("").subscribe((result)=> {
+    this.serverHttp.CreateMusic(data).subscribe((result)=> {
 
     })
   }
-  
+  //lấy danh sách
+  getlist(){
+    this.serverHttp.GetList(this.searchcontentmusic.value).subscribe((result)=> {
+      this.ListMusic = result.data;
+      this.total = result.data.length;
+    })
+  }
+  //xóa
+  deleteMusic(data:any){
+    this.serverHttp.DeleteMusic(data).subscribe();
+  }
 
 }

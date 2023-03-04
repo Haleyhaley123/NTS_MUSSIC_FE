@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HSUcghD5Ec/OJWSspT/X7MJBXiwuPxC4qI1jIEB9uobCi6XldsFtjLYOuNoMFaRJb5o6w/1v4lNwrPJTnaOOaw==",
+  "dgSpecHash": "1k+ON8ggJy8jJp1jP3W1Y/2ugFfHmYtYRpENSUAPMyUnHqyOuQzADD4uPcQYHJEk2i9co89eKMuNm/P3ggMNnA==",
   "success": true,
-  "projectFilePath": "D:\\NhanTinSoft\\NTS_Nhac\\NTS_Nhac_Training\\Common\\Common.csproj",
+  "projectFilePath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

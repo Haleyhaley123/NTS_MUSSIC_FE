@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a7g30iqlaXbtNSQ0s4yIhrKneLcBw//dutqXsjMHqtzWZjJrzX/+ly8jSsJqR333VN63k0fE3fOn0C6bG61eeQ==",
+  "dgSpecHash": "QlNVMsdaxV/AfMNEksv0h7FJU6Ps/be6+PYpI7DAt8XTIuuJQ++ySnevPebk4XGP1lQXpAN05YWYbphCl39+hA==",
   "success": true,
-  "projectFilePath": "D:\\NhanTinSoft\\NTS_Nhac\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj",
+  "projectFilePath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

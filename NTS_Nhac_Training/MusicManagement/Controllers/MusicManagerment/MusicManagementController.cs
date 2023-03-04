@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicManagement.Constants;
+using MusicManagement.Models;
 using Reponsitory.Interface;
 using static Common.BaseModel.ResponModel;
 
@@ -25,11 +26,11 @@ namespace MusicManagement.Controllers
             response.Status = MConstants.MessageAddMusicSuccess;           
             return response;
         }
-        [HttpGet("music/List")]
-        public async Task<ActionResult<MResponseModel>> GetList()
+        [HttpPost("music/List")]
+        public async Task<ActionResult<MResponseModel>> GetList([FromBody] FilterModel request)
         {
             MResponseModel response = new MResponseModel();
-            var result = await _iMusicReponsitory.ListMusic();    
+            var result = await _iMusicReponsitory.ListMusic(request.Content);    
             if(result== null)
             {
                 response.Status = MConstants.MessageNotFound;
@@ -42,7 +43,7 @@ namespace MusicManagement.Controllers
         public async Task<ActionResult<MResponseModel>> UpdateMusic([FromBody] MusicDetail data)
         {
             MResponseModel response = new MResponseModel();
-            var result = await _iMusicReponsitory.AddMusicOrUpdate(data);
+            var result = await _iMusicReponsitory.AddMusicOrUpdateorDelete(data);
             response.Data = result;
             response.Status = MConstants.MessageAddMusicSuccess;
             return response;
@@ -51,7 +52,7 @@ namespace MusicManagement.Controllers
         public async Task<ActionResult<MResponseModel>> DeleteMusic(Guid id)
         {
             MResponseModel response = new MResponseModel();
-            var result = await _iMusicReponsitory.DeleteMusic(id);
+            var result = await _iMusicReponsitory.AddMusicOrUpdateorDelete(id);
             if (result == null)
             {
                 response.Status = MConstants.MessageDeleteFail;

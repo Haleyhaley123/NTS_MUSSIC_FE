@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MUFRaDZ5X46VDi8M/Aw9txHHMYOdNuqcTGQEt/CklwCKwbNef/kAeogWWRzAVCFU4m8PLemHwpcT7N6gEuhnZQ==",
+  "dgSpecHash": "Mx/YDMwqAOesV+Epnx+/WjF8mBiWKuP1c14rJq9UP/kG42C/xs8e+G1DRwHD2MBOq6slGdxDkGDhggP0N+i58g==",
   "success": true,
-  "projectFilePath": "D:\\NhanTinSoft\\NTS_Nhac\\NTS_Nhac_Training\\MusicManagement\\MusicManagement.csproj",
+  "projectFilePath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\MusicManagement\\MusicManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

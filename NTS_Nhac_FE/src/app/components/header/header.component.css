@@ -1,5 +1,7 @@
-.header_music {
-background-color: #e03;
-color: white;
-padding: 4px;
+h1 {
+    background-color: aqua;
+    color: blue;
+}
+.navbar-right {
+    background-color: rgb(218, 218, 35);
 }
