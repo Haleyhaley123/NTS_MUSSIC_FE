@@ -1,0 +1,10 @@
+Ctrl + Shift + K	Xóa dòng
+Home	Đi đến đầu dòng
+End	Đi đến cuối dòng
+Ctrl + Home	Đi đến đầu file
+Ctrl + End	Đi đến cuối file
+Alt + Mũi tên lên/xuống	Di chuyển lên hoặc xuống
+Ctrl + ]	Tăng thụt lề dòng
+Ctrl + [	Giảm thụt lề dòng
+Ctrl + /	Chú thích cho một dòng
+Shift + Alt + A	Chú thích cho một region (đoạn code)

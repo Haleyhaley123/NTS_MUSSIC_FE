@@ -24,7 +24,6 @@ export class MusicmanagementComponent{
   openDialog(){
     this.dialog.open(ModalComponent ,{
       width: '350px'});
-
   }
   //tạo mới
   createmusic(data: any){

@@ -15,6 +15,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatNativeDateModule} from  '@angular/material/core';
 import { TestComponent } from './components/test/test.component';
+import { ModalmusiccomponentComponent } from './modals/modalmusiccomponent/modalmusiccomponent.component';
 
 
 
@@ -26,7 +27,8 @@ import { TestComponent } from './components/test/test.component';
     ModalComponent,
     HeaderComponent,
     FooterComponent,
-    TestComponent
+    TestComponent,
+    ModalmusiccomponentComponent
   ],
   imports: [
     BrowserModule,
