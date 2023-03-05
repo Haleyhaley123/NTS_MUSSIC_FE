@@ -13,6 +13,8 @@ export class ModalmusiccomponentComponent implements OnInit {
     {Name:'Nhạc theo năm', value: 'MUSICYEAR'},
     ];
   public typechoice = '';
+  public nametypechoice = '';
+  gfg1 = {hour: 15, minute: 58};
 
   constructor(public dialog: MatDialog) { }
 
@@ -23,6 +25,14 @@ export class ModalmusiccomponentComponent implements OnInit {
   }
   radioChangeHandler(event: any){
     this.typechoice = event.target.value;
-    console.log('check', this.typechoice);
+    if(this.typechoice.trim()=='MUSICDAY'){
+      this.nametypechoice = 'Nhạc một lần';
+    }
+    if(this.typechoice.trim()=='MUSICMONTH'){
+      this.nametypechoice = 'Nhạc theo tuần';
+    }
+    if(this.typechoice.trim()=='MUSICYEAR'){
+      this.nametypechoice = 'Nhạc theo năm';
+    }
   }
 }

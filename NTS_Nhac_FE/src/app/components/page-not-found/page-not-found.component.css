@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    width:100vw ;
+    height: 800px;
+    border: 5px solid grey;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height: 200px;
+    padding: 10px;
+    flex-grow:1 ;
+    flex-shrink:1 ;
+    flex-basis: auto;
+}
+.box p {
+    font-size: 20px;
+    color: white;
+}
+.box-1{
+    background-color: red;
+}
+.box-2{
+    background-color: green;
+}
+.box-3{
+    background-color: yellow;
+}
+
