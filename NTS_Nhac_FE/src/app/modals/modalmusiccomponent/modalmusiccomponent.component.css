@@ -69,31 +69,38 @@ label {
     /* grid-template-columns: 1fr 1fr;  
     grid-template-rows: 75px 1fr 1fr 1fr 40px; */
     grid-template-areas:
-    "musicdayheader"
-    "musicdaycontent";
-    padding: 20px;
+    "timeplay dateplay"
+    "content content"
+    "status uploadfile";
+    padding: 1px;
     
 }
 .musicday-item { 
     border: 1px solid red;   
     min-height: 50px;
-    background-color: green;
+    
 }
-.musicday-header{
-    grid-area: musicdayheader;
-}
-.musicday-content{
+.musicday-timeplay{
     grid-area: timeplay;
-    background-color: blue;}
+    min-height: 60px;
+    width: 310px;
+}
 .musicday-dateplay{
     grid-area: dateplay;
-    background-color: orange;
+    width: 310px;
+}
+.musicday-content{
+    grid-area: content;
+}
+.musicday-status{
+    grid-area: status;
+}
+.musicday-uploadfile{
+    grid-area: uploadfile;
 }
 .modal-footer {
     grid-area: footer;
     justify-content: flex-end;
-    
-  
 }
 .footer-btn{
     padding: 15px 10px 10px 50px;

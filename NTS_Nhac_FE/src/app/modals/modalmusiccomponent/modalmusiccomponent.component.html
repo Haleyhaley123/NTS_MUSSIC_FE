@@ -6,67 +6,121 @@
 </head>
 
 <body>
-    <div class="body container-modal">
-        <div class="modal-header modal-item">
-            <div class="column-title">
-                <h4 class="modal-title text-uppercase text-danger">Thêm mới loại nhạc</h4>
+    <form>
+        <div class="body container-modal">
+            <div class="modal-header modal-item">
+                <div class="column-title">
+                    <h4 class="modal-title text-uppercase text-danger">Thêm mới loại nhạc</h4>
+                </div>
+                <div class="colum-btn">
+                    <button type="button" class="btn-close btn-header" disabled aria-label="Close"
+                        (click)="closemodal()"></button>
+                </div>
             </div>
-            <div class="colum-btn">
-                <button type="button" class="btn-close btn-header" disabled aria-label="Close"
-                    (click)="closemodal()"></button>
-            </div>
-        </div>
-        <div class="modal-content modal-item">
-            <div class="rowcontentmusic">
-                <div class="form-group">
-                    <label class="form-label">
-                        <h4>Loại Nhạc</h4>
-                    </label>
-                    <div class="controls" *ngFor="let type of typeMusics">
-                        <label class="radio">{{type.Name}}
-                            <input type="radio" name="typeofmusic" value="{{type.value}}"
-                                (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+            <div class="modal-content modal-item">
+                <div class="rowcontentmusic">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <h4>Loại Nhạc</h4>
+                        </label>
+                        <div class="controls" *ngFor="let type of typeMusics">
+                            <label class="radio">{{type.Name}}
+                                <input type="radio" name="typeofmusic" value="{{type.value}}"
+                                    (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                            </label>
+                        </div>
+                        <label>
+                            <h5>{{nametypechoice}}</h5>
                         </label>
                     </div>
-                </div>
-                <div class="contain-musicday" *ngIf="typechoice.trim()=== 'MUSICDAY'">
-                    <div musicday-item musicday-header>music day header</div>
-                    <div musicday-item musicday-content> content
-                        <!-- <form>
-                            <div>thời gian phát</div>
-                            <div>giờ phát</div>
-                            <div>nội dung</div>
-                            <div>tình trạng</div>
-                            <div>thêm nhạc</div>
-                        </form>  -->
+                    <div class="contain-musicday" *ngIf="typechoice.trim()=== 'MUSICDAY'">
+                        <div class="musicday-item musicday-timeplay">
+                            <label class="form-label">
+                                <h5>Thời gian phát</h5>
+                            </label>
+                            <div>  
+                                <input>
+                                <input>                             
+                            </div>
+
+                        </div>
+                        <div class="musicday-item musicday-dateplay"> 
+                            <label class="form-label">
+                                <h5>Ngày phát</h5>
+                            </label>
+                            <div>
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker">
+    
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker>
+    
+                                    </mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                           
+                        </div>
+                        <div class="musicday-item musicday-content">
+                            <div>
+                                <label>
+                                    <h5>Nội dung</h5>
+                                </label>
+                                <div>
+                                    <input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="musicday-item musicday-status"> 
+                            <div>
+                                <label>
+                                    <h5>Trạng thái</h5>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="" name="" value="true">
+                                  <label for="day">Đang hoạt động</label>
+                                  <input type="radio" id="" name="" value="false">
+                                  <label for="month">Dừng hoạt động</label>
+                            </div>
+                        </div>
+                        <div class="musicday-item musicday-uploadfile">
+                            <div>
+                                <label><h5>Thêm nhạc</h5></label>
+                            </div>
+                            <div>
+                                <input id="FileUpload_FormFile" type="file" />
+                            </div>
+                        </div>
+
                     </div>
-                      
-                </div>
-                <div class="musicmonth" *ngIf="typechoice.trim()=== 'MUSICMONTH'">
+                    <div class="musicmonth" *ngIf="typechoice.trim()=== 'MUSICMONTH'">
 
-                </div>
-                <div class="musicyear" *ngIf="typechoice.trim()=== 'MUSICYEAR'">
+                    </div>
+                    <div class="musicyear" *ngIf="typechoice.trim()=== 'MUSICYEAR'">
 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer modal-item">
+                <div class="footer-btn">
+                    <button type="button" class="btn btn-success">
+                        <i class="fa fa-save"></i>&nbsp;
+                        <span>Lưu</span>
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <i class="fa fa-save"></i>&nbsp;
+                        <span>Lưu &amp; tiếp tục</span>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <i class="fa fa-power-off"></i> &nbsp;
+                        <span> Đóng</span>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="modal-footer modal-item">
-            <div class="footer-btn">
-                <button type="button" class="btn btn-success">
-                    <i class="fa fa-save"></i>&nbsp;
-                    <span>Lưu</span>
-                </button>
-                <button type="button" class="btn btn-success">
-                    <i class="fa fa-save"></i>&nbsp;
-                    <span>Lưu &amp; tiếp tục</span>
-                </button>
-                <button type="button" class="btn btn-danger">
-                    <i class="fa fa-power-off"></i> &nbsp;
-                    <span> Đóng</span>
-                </button>
-            </div>
-        </div>
-    </div>
+    </form>
+
 </body>
 <footer>
 
