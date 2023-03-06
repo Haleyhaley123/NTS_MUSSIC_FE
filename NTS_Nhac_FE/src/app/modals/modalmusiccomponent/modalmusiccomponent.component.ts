@@ -21,21 +21,21 @@ export class ModalmusiccomponentComponent implements OnInit {
   //tạo mới
   createmusic() {
     let datapayload = new MusicPayload();
-    datapayload.MusicContent = this.databinding.Content;
-    datapayload.TypeMusicCode = this.databinding.typechoice.trim();
-    datapayload.Status = this.databinding.statuschoice;
-    datapayload.UploadFileId =  this.databinding._uploadFileId;
+    datapayload.musicContent = this.databinding.Content;
+    datapayload.typeMusicCode = this.databinding.typechoice.trim();
+    datapayload.status = this.databinding.statuschoice;
+    datapayload.uploadFileId =  this.databinding._uploadFileId;
     if (this.databinding.typechoice.trim() == 'MUSICDAY') {
-      datapayload.TimePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
-      datapayload.DatePlay = this.databinding.DatePlay;
+      datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
+      datapayload.datePlay = this.databinding.DatePlay;
     }
     if (this.databinding.typechoice.trim() == 'MUSICMONTH') {
-      datapayload.TimePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
-      datapayload.DatePlay =  this.databinding.DayofWeek;     
+      datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
+      datapayload.datePlay =  this.databinding.DayofWeek;     
     }
     if (this.databinding.typechoice.trim() == 'MUSICYEAR') {
-      datapayload.TimePlay = this.databinding.DayofmonthChoice;
-      datapayload.DatePlay =this.databinding.MonthChoice;      
+      datapayload.timePlay = this.databinding.DayofmonthChoice;
+      datapayload.datePlay =this.databinding.MonthChoice;      
     }   
     this.serverHttp.CreateMusic(datapayload).subscribe((result) => {
 
@@ -52,14 +52,13 @@ export class ModalmusiccomponentComponent implements OnInit {
   //upload file
   uploadfile(event: any) {
     this.databinding.fileToUpload = event.target.files[0];
-    console.log('file', this.databinding.fileToUpload);
     let formData = new FormData();
     formData.append('files', this.databinding.fileToUpload);
-    console.log(formData);
     this.serverHttp.UploadFile(formData).subscribe((result) => {
-      if (result)
-        this.databinding._uploadFileId = result.id;
+      this.databinding._uploadFileId = result.id;
     });
+    
+    
   }
   closemodal() {
     this.dialog.closeAll();
@@ -81,7 +80,7 @@ export class ModalmusiccomponentComponent implements OnInit {
 
   }
   onChangeStatus(event: any) {
-    this.databinding.statuschoice = event.target.value;
+    this.databinding.statuschoice = Boolean(event.target.value);
   }
   onChangedayofweek(event: any) {  
     console.log('đây là kiểm tra', event.target.value.checked);

@@ -14,44 +14,45 @@ namespace Reponsitory.Reponsitory
         }
         public async Task<Guid> AddMusicOrUpdate(MusicDetail request)
         {
-            var music = await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted && e.MusicId == request.MusicId).FirstOrDefaultAsync();
-            if (music == null)
+            try
             {
-                MusicDetail data = new MusicDetail
+                var music = await _dataBaseContext.MusicDetail.Where(e => !e.IsDeleted && e.MusicId == request.MusicId).FirstOrDefaultAsync();
+                if (music == null)
                 {
-                    MusicId = Guid.NewGuid(),
-                    TimePlay = request.TimePlay,
-                    MusicContent = request.MusicContent,
-                    Status = true,
-                    TypeMusicCode = request.TypeMusicCode,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "",
-                    UpdatedAt = DateTime.Now,
-                    UpdatedBy = "",
-                    UploadFileId = request.UploadFileId,
-                    DatePlay = request.DatePlay
-                };
-                _dataBaseContext.MusicDetail.Add(data);
-                await _dataBaseContext.SaveChangesAsync();
-                return data.MusicId;
-            }
-            else
-            {
-                music.MusicId = Guid.NewGuid();
-                music.TimePlay = request.TimePlay;
-                music.MusicContent = request.MusicContent;
-                music.Status = request.Status;
-                music.TypeMusicCode = request.TypeMusicCode;
-                music.UpdatedAt = DateTime.Now;
-                music.UpdatedBy = request.UpdatedBy;
-                music.UploadFileId = request.UploadFileId;
-                music.DatePlay = request.DatePlay;
-                _dataBaseContext.MusicDetail.Update(music);
-                await _dataBaseContext.SaveChangesAsync();
-                return music.MusicId;
+                    MusicDetail data = new MusicDetail
+                    {
+                        MusicId = Guid.NewGuid(),
+                        TimePlay = request.TimePlay,
+                        MusicContent = request.MusicContent,
+                        Status = true,
+                        TypeMusicCode = request.TypeMusicCode,
+                        UploadFileId = request.UploadFileId,
+                        DatePlay = request.DatePlay,
+                        CreatedAt = DateTime.Now,
+                    };
+                    _dataBaseContext.MusicDetail.Add(data);
+                    await _dataBaseContext.SaveChangesAsync();
+                    return data.MusicId;
+                }
+                else
+                {
+                    music.MusicId = Guid.NewGuid();
+                    music.TimePlay = request.TimePlay;
+                    music.MusicContent = request.MusicContent;
+                    music.Status = request.Status;
+                    music.TypeMusicCode = request.TypeMusicCode;
+                    music.UploadFileId = request.UploadFileId;
+                    music.DatePlay = request.DatePlay;
+                    _dataBaseContext.MusicDetail.Update(music);
+                    await _dataBaseContext.SaveChangesAsync();
+                    return music.MusicId;
 
+                }
             }
-            
+            catch (Exception ex)
+            {
+                return Guid.Empty;
+            }
         }
        
         public async Task<List<MusicDetail>> ListMusic(string content)

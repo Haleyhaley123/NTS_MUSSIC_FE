@@ -18,12 +18,15 @@ export class MusicBinding{
     public statuschoice = true;
 }
 export class MusicPayload{
-    public TimePlay = ' ';
-    public DatePlay = ' ';
-    public MusicContent = ' ';
-    public Status = true;
-    public TypeMusicCode = ' ' ;      
-    public UploadFileId = ' ';
+    public musicId = '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+    public timePlay = '';
+    public datePlay = '';
+    public musicContent = '';
+    public status: any;
+    public typeMusicCode = '' ;      
+    public uploadFileId = ' ';      
+    public isDeleted = false;
+    public createdAt = new Date();
 }
 export class ShowData{
     public dayofweek = [
