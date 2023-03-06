@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-up.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -33,22 +35,39 @@
                             <h5>{{nametypechoice}}</h5>
                         </label>
                     </div>
-                    <div class="contain-musicday" *ngIf="typechoice.trim()=== 'MUSICDAY'">
+                    <!-- <div class="contain-musicday" *ngIf="typechoice.trim()=== 'MUSICDAY'"> -->
+                        <div class="contain-musicday">
                         <div class="musicday-item musicday-timeplay">
                             <label class="form-label">
                                 <h5>Thời gian phát</h5>
                             </label>
-                            <div>  
-                                <input>
-                                <input>                             
+                            <div class="Containerbnt-inputplay">  
+                                <div class="inputplay hour-item">
+                                    <button type="button" class="btn">
+                                        <i class="gg-chevron-up"></i> &nbsp;
+                                    </button>
+                                    <input class="input-hour" placeholder="HH">
+                                    <button type="button" class="btn">
+                                        <i class="gg-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="inputplay minute-item">
+                                    <button type="button" class="btn">
+                                        <i class="gg-chevron-up"></i> &nbsp;
+                                    </button>
+                                    <input class="input-hour" placeholder="MM">
+                                    <button type="button" class="btn">
+                                        <i class="gg-chevron-down"></i>
+                                    </button>
+                                </div>                           
                             </div>
 
                         </div>
                         <div class="musicday-item musicday-dateplay"> 
-                            <label class="form-label">
+                            <label class=" musicday-dateplay lable-title">
                                 <h5>Ngày phát</h5>
                             </label>
-                            <div>
+                            <div class="musicday-dateplay">
                                 <mat-form-field>
                                     <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy">
                                     <mat-datepicker-toggle matSuffix [for]="datepicker">
@@ -68,6 +87,42 @@
                                 </label>
                                 <div>
                                     <input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="musicday-item musicday-dayofweek">
+                            <div>
+                                <label>
+                                    <h5>Ngày trong tuần</h5>
+                                </label>
+                                <div>
+                                    <input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="musicday-item musicday-monthplay">
+                            <div class="timeitem monthplay-item">
+                                <label>
+                                    <h5>Tháng phát</h5>
+                                </label>
+                                <div class="controls" *ngFor="let month of monthplay">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="monthplay" value="{{month.value}}"
+                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                                            {{month.Name}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="timeitem dayplay-item">
+                                <label>
+                                    <h5>Ngày trong tháng</h5>
+                                </label>
+                                <div class="controls" *ngFor="let day of dayofmonth">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="monthplay" value="{{day}}"
+                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                                            {{day}}
+                                    </label>
                                 </div>
                             </div>
                         </div>

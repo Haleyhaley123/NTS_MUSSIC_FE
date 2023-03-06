@@ -71,6 +71,8 @@ label {
     grid-template-areas:
     "timeplay dateplay"
     "content content"
+    "dayofweek dayofweek"
+    "monthplay monthplay"
     "status uploadfile";
     padding: 1px;
     
@@ -83,20 +85,82 @@ label {
 .musicday-timeplay{
     grid-area: timeplay;
     min-height: 60px;
-    width: 310px;
 }
 .musicday-dateplay{
     grid-area: dateplay;
-    width: 310px;
+    display: flex;  
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;  
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+.lable-title {
+    font-size: var(--body-fontsize);
+}
+.timepicker{
+    min-width: 244px;
+    min-height: 32px;
 }
 .musicday-content{
     grid-area: content;
+}
+.musicday-dayofweek{
+    grid-area: dayofweek;
+}
+.musicday-monthplay{
+    grid-area: monthplay;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
+    align-items: center;
+   
+}
+.timeitem{
+    border: 1px solid red;  
+}
+.monthplay-item{
+
+}
+.dayplay-item{
+    
 }
 .musicday-status{
     grid-area: status;
 }
 .musicday-uploadfile{
     grid-area: uploadfile;
+}
+.Containerbnt-inputplay{
+    display: grid;
+    grid-template-areas: "hour minute";
+    padding: 1px;
+}
+.inputplay{
+    border: 1px solid red;   
+    min-height: 50px;
+}
+.hour-item{
+    grid-area: hour;
+    display: flex;  
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+}
+.input-hour{
+    height: 31px;
+    width: 67px;
+}
+
+.minute-item{
+    grid-area: minute;
+    display: flex;  
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
 }
 .modal-footer {
     grid-area: footer;

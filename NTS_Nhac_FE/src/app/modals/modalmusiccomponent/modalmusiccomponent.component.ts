@@ -14,7 +14,15 @@ export class ModalmusiccomponentComponent implements OnInit {
     ];
   public typechoice = '';
   public nametypechoice = '';
-  gfg1 = {hour: 15, minute: 58};
+  public monthplay = [
+    {Name:'Tháng 1', value: '1'},{Name:'Tháng 2', value: '2'},
+    {Name:'Tháng 3', value: '3'},{Name:'Tháng 4', value: '4'},
+    {Name:'Tháng 5', value: '5'},{Name:'Tháng 6', value: '6'},
+    {Name:'Tháng 7', value: '7'},{Name:'Tháng 8', value: '8'},
+    {Name:'Tháng 9', value: '9'},{Name:'Tháng 10', value: '10'},
+    {Name:'Tháng 11', value: '11'},{Name:'Tháng 12', value: '12'},
+    ];
+    public dayofmonth = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
 
   constructor(public dialog: MatDialog) { }
 
