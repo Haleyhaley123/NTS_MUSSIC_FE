@@ -18,6 +18,7 @@ namespace MusicManagement.Controllers.File
         [HttpPost("UploadFile")]
         public async Task<IActionResult> UploadMp3File(List<IFormFile> files)
         {
+            var a = HttpContext.Request;
             var upload_path = System.Configuration.ConfigurationManager.AppSettings["FilePath"];
             var date_now = DateTime.Now.ToString("dd-MM-yyyy");
             var folder_virtual_path = $"/UploadFiles/MP3/Temp/{date_now}";
