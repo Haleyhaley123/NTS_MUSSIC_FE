@@ -40,42 +40,42 @@
                         </label>
                     </div>
                     <label>
-                        <h5>{{nametypechoice}}</h5>
+                        <h5>{{databinding.nametypechoice}}</h5>
                     </label>
                 </div>
-                <div class="contain-musicday" *ngIf="ShowContent>0">
+                <div class="contain-musicday" *ngIf="databinding.ShowContent>0">
                     <div class="musicday-item musicday-timeplay">
                         <label class="form-label">
                             <h5>Thời gian phát</h5>
                         </label>
                         <div class="Containerbnt-inputplay">
                             <div class="inputplay hour-item">
-                                <button type="button" class="btn">
+                                <!-- <button type="button" class="btn">
                                     <i class="gg-chevron-up"></i> &nbsp;
-                                </button>
-                                <input class="input-hour" type="number" placeholder="HH" [(ngModel)]="HourTimePlay">                                  
-                                <button type="button" class="btn">
+                                </button> -->
+                                <input class="input-hour" type="number" min="1" max="24" placeholder="HH" [(ngModel)]="databinding.HourTimePlay">                                  
+                                <!-- <button type="button" class="btn">
                                     <i class="gg-chevron-down"></i>
-                                </button>
+                                </button> -->
                             </div>
                             <div class="inputplay minute-item">
-                                <button type="button" class="btn">
+                                <!-- <button type="button" class="btn">
                                     <i class="gg-chevron-up"></i> &nbsp;
-                                </button>
-                                <input class="input-hour" type="number" placeholder="MM" [(ngModel)]="MinuteTimePlay">                                 
-                                <button type="button" class="btn">
+                                </button> -->
+                                <input class="input-hour" type="number"  min="0" max="60" placeholder="MM" [(ngModel)]="databinding.MinuteTimePlay">                                 
+                                <!-- <button type="button" class="btn">
                                     <i class="gg-chevron-down"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </div>
 
                     </div>
-                    <div class="musicday-item musicday-dateplay" *ngIf="ShowContent<2">
+                    <div class="musicday-item musicday-dateplay" *ngIf="databinding.ShowContent<2">
                         <label class=" musicday-dateplay lable-title">
                             <h5>Ngày phát</h5>
                         </label>
                         <div class="musicday-dateplay">
-                            <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy" [(ngModel)]="DatePlay">
+                            <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy" [(ngModel)]="databinding.DatePlay">
                                 <mat-datepicker-toggle matSuffix [for]="datepicker">
                                 </mat-datepicker-toggle>
                                 <mat-datepicker #datepicker>
@@ -83,23 +83,23 @@
                         </div>
 
                     </div>
-                    <div class="musicday-item musicday-content" *ngIf="ShowContent>0">
+                    <div class="musicday-item musicday-content" *ngIf="databinding.ShowContent>0">
                         <div>
                             <label>
                                 <h5>Nội dung</h5>
                             </label>
                             <div>
-                                <input class="music-content-input" id="musicContent" type="text" [(ngModel)]="Content">
+                                <input class="music-content-input" id="musicContent" type="text" [(ngModel)]="databinding.Content">
                                 
                             </div>
                         </div>
                     </div>
-                    <div class="musicday-item musicday-dayofweek" *ngIf="ShowContent == 2">
+                    <div class="musicday-item musicday-dayofweek" *ngIf="databinding.ShowContent == 2">
                         <div>
                             <label>
                                 <h5>Ngày trong tuần</h5>
                             </label>
-                            <div class="controls" *ngFor="let week of dayofweek">
+                            <div class="controls" *ngFor="let week of showdata.dayofweek">
                                 <label class="checkbox">
                                     <input type="checkbox" name="monthplay" value="{{week.value}}"
                                     (change)="onChangedayofweek($event)" >
@@ -108,12 +108,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="musicday-item musicday-monthplay" *ngIf="ShowContent>2">
+                    <div class="musicday-item musicday-monthplay" *ngIf="databinding.ShowContent>2">
                         <div class="timeitem monthplay-item">
                             <label>
                                 <h5>Tháng phát</h5>
                             </label>
-                            <div class="controls" *ngFor="let month of monthplay">
+                            <div class="controls" *ngFor="let month of showdata.monthplay">
                                 <label class="checkbox">
                                     <input type="checkbox" name="monthplay" value="{{month.value}}"
                                     class="ng-valid ng-dirty ng-touched" (change)="onChangmonthplay($event)">
@@ -121,11 +121,11 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="timeitem dayplay-item" *ngIf="ShowContent>2">
+                        <div class="timeitem dayplay-item" *ngIf="databinding.ShowContent>2">
                             <label>
                                 <h5>Ngày trong tháng</h5>
                             </label>
-                            <div class="controls" *ngFor="let day of dayofmonth">
+                            <div class="controls" *ngFor="let day of showdata.dayofmonth">
                                 <label class="checkbox">
                                     <input type="checkbox" name="monthplay" value="{{day}}"
                                         (change)="onChangeofmonth($event)" class="ng-valid ng-dirty ng-touched">
@@ -140,7 +140,7 @@
                                 <h5>Trạng thái</h5>
                             </label>
                         </div>
-                        <div *ngFor="let status of status">
+                        <div *ngFor="let status of showdata.status">
                             <label class="controls">
                                 <input type="radio" name="monthplay" value="{{status.value}}"
                                         (change)="onChangeStatus($event)" class="ng-valid ng-dirty ng-touched">
