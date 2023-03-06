@@ -19,6 +19,18 @@ export class MusicService {
       'X-Requested-With': '*',
     }),
   }
+  private httpheaderUpload = {
+    headers: new HttpHeaders({
+      'Content-Type': 'multipart/form-data, boundary=xxBOUNDARYxx',
+      'Accept': '*/*',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers':
+      'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Methods':'POST',
+      'X-Requested-With': '*',
+    }),
+  }
   private REST_API_SERVER = 'https://localhost:44344/api';
 
   constructor(private httpClient: HttpClient) { }
@@ -50,7 +62,13 @@ export class MusicService {
     .post<any>(url,this.httpheader)
     .pipe(catchError(this.handleError));
   }
-
+//upload file
+public UploadFile(data : any){
+  const url = `${this.REST_API_SERVER}/UploadFile`;
+    return this.httpClient
+    .post<any>(url,data,this.httpheaderUpload)
+    .pipe(catchError(this.handleError));
+}
   private handleError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){
       console.error('Error occurs', error.message);

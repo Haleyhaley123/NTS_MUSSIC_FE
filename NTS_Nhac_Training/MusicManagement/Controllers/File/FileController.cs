@@ -16,11 +16,8 @@ namespace MusicManagement.Controllers.File
             _dataBaseContext = dataBaseContext;
         }
         [HttpPost("UploadFile")]
-        public async Task<IActionResult> UploadMp3File(List<IFormFile> files, string musicid)
+        public async Task<IActionResult> UploadMp3File(List<IFormFile> files)
         {
-            string stg_musicId = HttpContext.Request.Query["musicid"];
-            var musicId = Guid.TryParse(stg_musicId, out var _musicId);
-            if (!musicId) return NotFound();
             var upload_path = System.Configuration.ConfigurationManager.AppSettings["FilePath"];
             var date_now = DateTime.Now.ToString("dd-MM-yyyy");
             var folder_virtual_path = $"/UploadFiles/MP3/Temp/{date_now}";
@@ -51,11 +48,12 @@ namespace MusicManagement.Controllers.File
                         };
                         _dataBaseContext.UploadFile.Add(data);
                         await _dataBaseContext.SaveChangesAsync();
-
-                    }   
+                        return Ok(new { Id = data.FileId });
+                    } 
+                    
                 }
             }
-            return Ok(new { url ="" });              
+            return NotFound(new { Id = "" });;              
         }
         [HttpPost("ReadFile")]
         public async Task<IActionResult> ReadMp3File()
@@ -67,7 +65,7 @@ namespace MusicManagement.Controllers.File
         }
         private bool IsCheckTypeFile()
         {
-            return false;
+            return true;
         }
     }
 }

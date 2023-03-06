@@ -25,12 +25,7 @@ export class MusicmanagementComponent{
     this.dialog.open(ModalComponent ,{
       width: '350px'});
   }
-  //tạo mới
-  createmusic(data: any){
-    this.serverHttp.CreateMusic(data).subscribe((result)=> {
-
-    })
-  }
+  
   //lấy danh sách
   getlist(){
     this.serverHttp.GetList(this.searchcontentmusic.value).subscribe((result)=> {
@@ -43,13 +38,6 @@ export class MusicmanagementComponent{
     this.serverHttp.DeleteMusic(id).subscribe((response) =>{
       this.getlist();
     });
-  }
-  //sửa 
-  updateMusic(data:any){
-  
-    this.serverHttp.UpdateMusic(data).subscribe((result)=>{
-     
-    });
-  }
+  }  
 
 }

@@ -108,6 +108,11 @@ label {
 .musicday-content{
     grid-area: content;
 }
+.music-content-input{
+    width: 100%;
+    height: 110px;
+}
+
 .musicday-dayofweek{
     grid-area: dayofweek;
 }
