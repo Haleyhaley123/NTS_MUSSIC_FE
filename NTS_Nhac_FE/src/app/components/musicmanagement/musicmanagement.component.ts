@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MusicService } from 'src/app/services/music.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalmusiccomponentComponent } from 'src/app/modals/modalmusiccomponent/modalmusiccomponent.component';
 @Component({
   selector: 'app-musicmanagement',
   templateUrl: './musicmanagement.component.html',
@@ -22,7 +22,7 @@ export class MusicmanagementComponent{
   } 
   //popup thêm mới
   openDialog(){
-    this.dialog.open(ModalComponent ,{
+    this.dialog.open(ModalmusiccomponentComponent ,{
       width: '350px'});
   }
   
