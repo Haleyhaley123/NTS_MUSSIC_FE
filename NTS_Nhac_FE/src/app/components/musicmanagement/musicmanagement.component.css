@@ -1,18 +1,18 @@
 .container-fluid{
-  height: 100% ;
- 
+  height: 100% ;   
+}
+.row{
+
 }
 .sidebar{
     background-color: #e03;
     float: left;
     width: 20%;
-    padding: 16px;
     color: white;
 }
 .main-content{
-  background-color: rgb(243, 231, 231);
-  padding: 16px;
-  width: 100%;
+  background-color: white;
+  width: 80%;
 
 }
 h2 {

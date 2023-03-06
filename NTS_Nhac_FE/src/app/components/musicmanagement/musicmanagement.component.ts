@@ -23,7 +23,8 @@ export class MusicmanagementComponent{
   //popup thêm mới
   openDialog(){
     this.dialog.open(ModalmusiccomponentComponent ,{
-      width: '350px'});
+      width: '100%',
+      height: '500px'});
   }
   
   //lấy danh sách

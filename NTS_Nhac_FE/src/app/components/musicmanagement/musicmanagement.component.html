@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-up.css' rel='stylesheet'>
+  <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css' rel='stylesheet'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -18,61 +22,109 @@
           </div>
         </nav>
         <div>
-          <form class="d-flex" role="search" [formGroup]="searchcontentmusic" (ngSubmit)="getlist()" >
-            <button type="button" placement="bottom-left" triggers="manual" class="btn btn-filter"> Tìm kiếm theo ... <i class="fas fa-caret-down"></i></button>
-            <input type="text" formControlName="content" class="form-control input-content-search ng-untouched ng-pristine ng-valid" 
-            placeholder="Tìm kiếm loại nhạc theo nội dung" >           
-            <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+          <form class="d-flex" role="search" [formGroup]="searchcontentmusic" (ngSubmit)="getlist()">
+            <button type="button" placement="bottom-left" triggers="manual" class="btn btn-filter"> Tìm kiếm theo ... <i
+                class="fas fa-caret-down"></i></button>
+            <input type="text" formControlName="content"
+              class="form-control input-content-search ng-untouched ng-pristine ng-valid"
+              placeholder="Tìm kiếm loại nhạc theo nội dung">
+            <button _ngcontent-hst-c85="" class="btn btn-success" type="submit">
+              <i _ngcontent-hst-c85="" class="fa fa-search"></i> &nbsp;Tìm kiếm
+            </button>
+
           </form>
-          <button class="btn btn-outline-success" type="submit" (click)="refreshgetlist()">Làm mới</button>
-          
+          <button _ngcontent-hst-c85="" class="btn btn-secondary" type="submit" (click)="refreshgetlist()"><i
+              _ngcontent-hst-c85="" class="fas fa-redo-alt"></i> &nbsp;Làm mới</button>
         </div>
         <div class="table_music">
           <div>
             <label class="lable_total">Tổng số {{total}} loại nhạc</label>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
-            data-bs-target="#staticBackdrop" (click)="openDialog()" > Thêm
-              mới</button>
+            <button _ngcontent-hst-c85="" type="button" container="body" class="btn btn-success"
+              (click)="openDialog()"><i _ngcontent-hst-c85="" class="fa fa-plus"></i> Thêm mới </button>
           </div>
-        
+
           <table id="listmusic" style="border-collapse:collapse;" class="table table-striped table-bordered">
             <thead>
-                <tr>
-                  <th>STT</th>
-                  <th>Xử lý</th>
-                  <th>Tình trạng</th>
-                  <th>Loại nhạc</th>
-                  <th>Thời gian phát</th>
-                  <th>Ngày phát</th>
-                  <th>Nội dung</th>
-                </tr>
+              <tr>
+                <th>STT</th>
+                <th>Xử lý</th>
+                <th>Tình trạng</th>
+                <th>Loại nhạc</th>
+                <th>Thời gian phát</th>
+                <th>Ngày phát</th>
+                <th>Nội dung</th>
+              </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let music of ListMusic; let i = index">
-                    <td>{{i + 1}}</td>
-                  <td>
-                    <button class="btn" >Cập nhật</button>
-                    <button class="btn" name="id" (click)="deleteMusic(music.musicId)">Xóa</button>
-                  </td>
-                  <td *ngIf="music.status">Đang hoạt động</td>
-                  <td *ngIf="!music.status">Dừng hoạt động</td>
-                  <td *ngIf="music.typeMusicCode.trim() == 'MUSICDAY'">Nhạc một lần</td>
-                  <td *ngIf="music.typeMusicCode.trim() =='MUSICMONTH'">Nhạc theo tháng</td>
-                  <td *ngIf="music.typeMusicCode.trim() =='MUSICYEAR'">Nhạc theo năm</td>
-                  <td>{{music.timePlay}}</td>
-                  <td>{{music.datePlay}}</td>
-                  <td>{{music.musicContent}}</td>
-                </tr>           
-                
+              <tr *ngFor="let music of ListMusic; let i = index">
+                <td>{{i + 1}}</td>
+                <td>
+                  <button class="btn">Cập nhật</button>
+                  <button class="btn" name="id" (click)="deleteMusic(music.musicId)">Xóa</button>
+                </td>
+                <td *ngIf="music.status">Đang hoạt động</td>
+                <td *ngIf="!music.status">Dừng hoạt động</td>
+                <td *ngIf="music.typeMusicCode.trim() == 'MUSICDAY'">Nhạc một lần</td>
+                <td *ngIf="music.typeMusicCode.trim() =='MUSICMONTH'">Nhạc theo tháng</td>
+                <td *ngIf="music.typeMusicCode.trim() =='MUSICYEAR'">Nhạc theo năm</td>
+                <td>{{music.timePlay}}</td>
+                <td>{{music.datePlay}}</td>
+                <td>{{music.musicContent}}</td>
+              </tr>
+
             </tbody>
             <tfoot>
             </tfoot>
-        </table>
-          <div class="">
+          </table>
+          <div _ngcontent-hst-c85="" class="row">
+            <div _ngcontent-hst-c85="" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-start">
+              <div _ngcontent-hst-c85="" class="controls">
+                <select _ngcontent-hst-c85="" name="pageSize" class="form-control ng-untouched ng-pristine ng-valid"
+                  style="border: 1px solid #ddd;">
+                  <option _ngcontent-hst-c85="" value="5">5</option>
+                  <option _ngcontent-hst-c85="" value="10">10</option>
+                  <option _ngcontent-hst-c85="" value="15">15</option>
+                  <option _ngcontent-hst-c85="" value="20">20</option>
+                  <option _ngcontent-hst-c85="" value="25">25</option>
+                  <option _ngcontent-hst-c85="" value="30">30</option>
+                </select>
+              </div>
+              <label _ngcontent-hst-c85="" class="form-label" style="padding: 4px;">bản ghi/Trang</label>
+            </div>
+            <div _ngcontent-hst-c85="" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a aria-label="First" href="" class="page-link" tabindex="-1" aria-disabled="true">
+                    <span aria-hidden="true">««</span>
+                  </a></li>
+                <li class="page-item disabled"><a aria-label="Previous" href="" class="page-link" tabindex="-1"
+                    aria-disabled="true">
+                    <span aria-hidden="true">«</span>
+                  </a></li>
+                <li class="page-item disabled">
+                  <a aria-label="Next" href="" class="page-link" tabindex="-1" aria-disabled="true">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+                <li class="page-item disabled">
+                  <a aria-label="Last" href="" class="page-link" tabindex="-1" aria-disabled="true">
+                    <span aria-hidden="true">»»</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div _ngcontent-hst-c85="" class="col-md-12"><button _ngcontent-hst-c85="" class="btn btn-view btn-success">
+            <i _ngcontent-hst-c85="" class="fas fa-plus"></i></button>&nbsp; <small _ngcontent-hst-c85="" class="padding-right-20">Thêm loại nhạc</small>
+            <button _ngcontent-hst-c85="" class="btn btn-view btn-warning"><i _ngcontent-hst-c85="" class="fa fa-edit"></i></button>&nbsp;
+             <small _ngcontent-hst-c85="" class="padding-right-20">Chỉnh sửa loại nhạc</small><button _ngcontent-hst-c85="" class="btn btn-view btn-danger">
+             <i _ngcontent-hst-c85="" class="fas fa-times"></i></button>&nbsp;
+             <small _ngcontent-hst-c85="" class="padding-right-20">Xóa loại nhạc</small></div>
+          <!-- <div class="">
             <button>Thêm loại nhạc</button> &nbsp;
             <button>Chỉnh sửa loại nhạc</button>&nbsp;
             <button>Xóa loại nhạc</button>&nbsp;
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

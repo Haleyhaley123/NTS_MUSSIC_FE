@@ -15,8 +15,11 @@
                 <h4 class="modal-title text-uppercase text-danger">Thêm mới loại nhạc</h4>
             </div>
             <div class="colum-btn">
-                <button type="button" class="btn-close btn-header" disabled aria-label="Close"
-                    (click)="closemodal()"></button>
+                <button type="button" #closeModal class="close" style="color: brown;" (click)="closemodal()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <!-- <button type="button" class="btn-close btn-header" disabled aria-label="Close"
+                    (click)="closemodal()"></button> -->
             </div>
         </div>
         <div class="modal-content modal-item">
@@ -62,7 +65,7 @@
                                 <!-- <button type="button" class="btn">
                                     <i class="gg-chevron-up"></i> &nbsp;
                                 </button> -->
-                                <input class="input-hour" type="number"  min="0" max="60" placeholder="MM" [(ngModel)]="databinding.MinuteTimePlay">                                 
+                                <input class="input-hour" type="number"  min="1" max="24" placeholder="MM" [(ngModel)]="databinding.MinuteTimePlay">                                 
                                 <!-- <button type="button" class="btn">
                                     <i class="gg-chevron-down"></i>
                                 </button> -->
@@ -176,10 +179,10 @@
                     <i class="fa fa-save"></i>&nbsp;
                     <span>Lưu &amp; tiếp tục</span>
                 </button>
-                <button type="button" class="btn btn-danger">
+                <button type="button" #closeModal class="btn btn-danger" (click)="closemodal()">
                     <i class="fa fa-power-off"></i> &nbsp;
                     <span> Đóng</span>
-                </button>
+                </button>                
             </div>
         </div>
     </div>

@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+.container-modal{  
+    min-height: 50%;
+}
 h4 {
     display: block;
     margin-block-start: 1.33em;
@@ -20,10 +23,6 @@ h4 {
     background-color: white;
     border: none;
     padding: 0;
-}
-
-body {
-    padding: 17px 370px;
 }
 
 .modal-item {
