@@ -7,13 +7,15 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   styleUrls: ['./modalmusiccomponent.component.css']
 })
 export class ModalmusiccomponentComponent implements OnInit {
-  public typeMusics = [
-    {Name:'Nhạc một lần', value: 'MUSICDAY'},
-    {Name:'Nhạc theo tuần', value: 'MUSICMONTH'},
-    {Name:'Nhạc theo năm', value: 'MUSICYEAR'},
-    ];
+  public ShowContent = 0;
   public typechoice = '';
   public nametypechoice = '';
+  public dayofweek = [
+    {Name:'Thứ 2', value: '2'},{Name:'Thứ 3', value: '3'},
+    {Name:'Thứ 4', value: '4'},{Name:'Thứ 5', value: '5'},
+    {Name:'Thứ 6', value: '6'},{Name:'Thứ 7', value: '7'},
+    {Name:'Chủ nhật', value: 'cn'}
+  ];
   public monthplay = [
     {Name:'Tháng 1', value: '1'},{Name:'Tháng 2', value: '2'},
     {Name:'Tháng 3', value: '3'},{Name:'Tháng 4', value: '4'},
@@ -34,13 +36,16 @@ export class ModalmusiccomponentComponent implements OnInit {
   radioChangeHandler(event: any){
     this.typechoice = event.target.value;
     if(this.typechoice.trim()=='MUSICDAY'){
-      this.nametypechoice = 'Nhạc một lần';
+      this.nametypechoice = 'Nhạc một lần';  
+      this.ShowContent = 1;  
     }
     if(this.typechoice.trim()=='MUSICMONTH'){
       this.nametypechoice = 'Nhạc theo tuần';
+      this.ShowContent = 2;  
     }
     if(this.typechoice.trim()=='MUSICYEAR'){
       this.nametypechoice = 'Nhạc theo năm';
+      this.ShowContent = 3;  
     }
   }
 }

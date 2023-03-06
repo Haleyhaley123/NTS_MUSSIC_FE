@@ -25,18 +25,26 @@
                         <label class="form-label">
                             <h4>Loại Nhạc</h4>
                         </label>
-                        <div class="controls" *ngFor="let type of typeMusics">
-                            <label class="radio">{{type.Name}}
-                                <input type="radio" name="typeofmusic" value="{{type.value}}"
+                        <div class="controls">
+                            <label class="radio">Nhạc một lần
+                                <input type="radio" name="typeofmusic" value="MUSICDAY"
                                     (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
                             </label>
-                        </div>
+                            <label class="radio">Nhạc theo tuần
+                                <input type="radio" name="typeofmusic" value="MUSICMONTH"
+                                    (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                            </label>
+                            <label class="radio">Nhạc theo năm
+                                <input type="radio" name="typeofmusic" value="MUSICYEAR"
+                                    (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                            </label>
+                        </div>                       
                         <label>
                             <h5>{{nametypechoice}}</h5>
                         </label>
                     </div>
-                    <!-- <div class="contain-musicday" *ngIf="typechoice.trim()=== 'MUSICDAY'"> -->
-                        <div class="contain-musicday">
+                    <!-- <div class="contain-musicday" *ngIf="isShow"> -->
+                        <div class="contain-musicday" *ngIf="ShowContent>0">
                         <div class="musicday-item musicday-timeplay">
                             <label class="form-label">
                                 <h5>Thời gian phát</h5>
@@ -63,7 +71,7 @@
                             </div>
 
                         </div>
-                        <div class="musicday-item musicday-dateplay"> 
+                        <div class="musicday-item musicday-dateplay" *ngIf="ShowContent<2"> 
                             <label class=" musicday-dateplay lable-title">
                                 <h5>Ngày phát</h5>
                             </label>
@@ -80,7 +88,7 @@
                             </div>
                            
                         </div>
-                        <div class="musicday-item musicday-content">
+                        <div class="musicday-item musicday-content" *ngIf="ShowContent>0">
                             <div>
                                 <label>
                                     <h5>Nội dung</h5>
@@ -90,17 +98,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="musicday-item musicday-dayofweek">
+                        <div class="musicday-item musicday-dayofweek" *ngIf="ShowContent == 2">
                             <div>
                                 <label>
                                     <h5>Ngày trong tuần</h5>
                                 </label>
-                                <div>
-                                    <input>
+                                <div class="controls" *ngFor="let week of dayofweek">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="monthplay" value="{{week.value}}"
+                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                                            {{week.Name}}
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="musicday-item musicday-monthplay">
+                        <div class="musicday-item musicday-monthplay" *ngIf="ShowContent>2">
                             <div class="timeitem monthplay-item">
                                 <label>
                                     <h5>Tháng phát</h5>
@@ -113,7 +125,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="timeitem dayplay-item">
+                            <div class="timeitem dayplay-item" *ngIf="ShowContent>2">
                                 <label>
                                     <h5>Ngày trong tháng</h5>
                                 </label>

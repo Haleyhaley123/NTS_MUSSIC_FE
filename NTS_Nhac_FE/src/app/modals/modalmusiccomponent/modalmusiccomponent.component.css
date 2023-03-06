@@ -114,19 +114,22 @@ label {
 .musicday-monthplay{
     grid-area: monthplay;
     display: flex;
-    flex-direction: row;    
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;    
    
 }
 .timeitem{
     border: 1px solid red;  
 }
 .monthplay-item{
+    position: relative;
+    width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top:1px;
 
 }
 .dayplay-item{
-    
+
 }
 .musicday-status{
     grid-area: status;
