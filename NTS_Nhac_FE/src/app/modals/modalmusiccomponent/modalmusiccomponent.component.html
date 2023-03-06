@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form [formGroup]="nusicinfoForm">
+    <form [formGroup]="nusicinfoForm" (ngSubmit)="createmusic(nusicinfoForm)">
         <div class="body container-modal">
             <div class="modal-header modal-item">
                 <div class="column-title">
@@ -55,7 +55,7 @@
                                     <button type="button" class="btn">
                                         <i class="gg-chevron-up"></i> &nbsp;
                                     </button>
-                                    <input class="input-hour" placeholder="HH">
+                                    <input class="input-hour" type="number" placeholder="HH" formControlName = "hourtimePlay">                                  
                                     <button type="button" class="btn">
                                         <i class="gg-chevron-down"></i>
                                     </button>
@@ -64,7 +64,7 @@
                                     <button type="button" class="btn">
                                         <i class="gg-chevron-up"></i> &nbsp;
                                     </button>
-                                    <input class="input-hour" placeholder="MM">
+                                    <input class="input-hour" type="number" placeholder="MM" formControlName="minutetimePlay">                                 
                                     <button type="button" class="btn">
                                         <i class="gg-chevron-down"></i>
                                     </button>
@@ -77,15 +77,11 @@
                                 <h5>Ngày phát</h5>
                             </label>
                             <div class="musicday-dateplay">
-                                <mat-form-field>
-                                    <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy">
+                                <input matInput [matDatepicker]="datepicker" placeholder="dd/mm/yyyy" formControlName="datePlay">
                                     <mat-datepicker-toggle matSuffix [for]="datepicker">
-
                                     </mat-datepicker-toggle>
                                     <mat-datepicker #datepicker>
-
                                     </mat-datepicker>
-                                </mat-form-field>
                             </div>
 
                         </div>
@@ -95,7 +91,8 @@
                                     <h5>Nội dung</h5>
                                 </label>
                                 <div>
-                                    <input class="music-content-input">
+                                    <input class="music-content-input" id="musicContent" type="text" formControlName="musicContent" >
+                                    
                                 </div>
                             </div>
                         </div>
@@ -107,8 +104,8 @@
                                 <div class="controls" *ngFor="let week of dayofweek">
                                     <label class="checkbox">
                                         <input type="checkbox" name="monthplay" value="{{week.value}}"
-                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
-                                        {{week.Name}}
+                                         class="ng-valid ng-dirty ng-touched" formControlName="dayofweek" >
+                                    {{week.Name}}                                    
                                     </label>
                                 </div>
                             </div>
@@ -121,8 +118,8 @@
                                 <div class="controls" *ngFor="let month of monthplay">
                                     <label class="checkbox">
                                         <input type="checkbox" name="monthplay" value="{{month.value}}"
-                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
-                                        {{month.Name}}
+                                        class="ng-valid ng-dirty ng-touched" formControlName="month">
+                                    {{month.Name}}
                                     </label>
                                 </div>
                             </div>
@@ -133,8 +130,8 @@
                                 <div class="controls" *ngFor="let day of dayofmonth">
                                     <label class="checkbox">
                                         <input type="checkbox" name="monthplay" value="{{day}}"
-                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
-                                        {{day}}
+                                            (change)="radioChangeHandler($event)" class="ng-valid ng-dirty ng-touched" formControlName="dayofmonth">
+                                        {{day}}                                    
                                     </label>
                                 </div>
                             </div>
@@ -145,11 +142,12 @@
                                     <h5>Trạng thái</h5>
                                 </label>
                             </div>
-                            <div>
-                                <input type="radio" id="" name="" value="true">
-                                  <label for="day">Đang hoạt động</label>
-                                  <input type="radio" id="" name="" value="false">
-                                  <label for="month">Dừng hoạt động</label>
+                            <div *ngFor="let status of status">
+                                <label class="controls">
+                                    <input type="radio" name="monthplay" value="{{status.value}}"
+                                            (change)="statusradioChangeHandler($event)" class="ng-valid ng-dirty ng-touched">
+                                        {{status.Name}}  
+                                </label>     
                             </div>
                         </div>
                         <div class="musicday-item musicday-uploadfile">
@@ -160,25 +158,19 @@
                             </div>
                             <div>                               
                                 <div class="form-group">                                    
-                                    <input type="file" (change)="uploadfile($event)">
-                                    
+                                    <input type="file"  #file (change)="uploadfile($event)"  style="display:none;">
+                                    <button type="button" class="btn btn-success" (click)="file.click()"><i class="fas fa-arrow-up"></i> &nbsp;Thêm nhạc</button>
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-                    <div class="musicmonth" *ngIf="typechoice.trim()=== 'MUSICMONTH'">
-
-                    </div>
-                    <div class="musicyear" *ngIf="typechoice.trim()=== 'MUSICYEAR'">
-
-                    </div>
                 </div>
             </div>
             <div class="modal-footer modal-item">
                 <div class="footer-btn">
-                    <button type="button" class="btn btn-success">
+                    <button class="btn btn-success" type="submit" [disabled]="!nusicinfoForm.valid">
                         <i class="fa fa-save"></i>&nbsp;
                         <span>Lưu</span>
                     </button>

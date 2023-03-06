@@ -39,5 +39,10 @@ export class MusicmanagementComponent{
       this.getlist();
     });
   }  
+  refreshgetlist(){
+    this.searchcontentmusic.value.content = '';
+    this.getlist();
+
+  }
 
 }

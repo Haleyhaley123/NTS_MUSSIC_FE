@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MusicService } from 'src/app/services/music.service';
@@ -9,10 +9,16 @@ import { MusicService } from 'src/app/services/music.service';
   styleUrls: ['./modalmusiccomponent.component.css']
 })
 export class ModalmusiccomponentComponent implements OnInit {
+  @ViewChild("takeInput", { static: false })
+  public InputVar!: ElementRef;
   nusicinfoForm = new FormGroup({
-    timePlay: new FormControl(''),
+    hourtimePlay: new FormControl(''),
+    minutetimePlay: new FormControl(''),
     datePlay: new FormControl(''),
     musicContent: new FormControl(''),
+    dayofweek: new FormControl(''),
+    dayofmonth: new FormControl(''),
+    month: new FormControl(''),
     status: new FormControl(''),
     typeMusicCode: new FormControl(''),
     uploadFileId: new FormControl('')
@@ -23,6 +29,7 @@ export class ModalmusiccomponentComponent implements OnInit {
   public ShowContent = 0;
   public typechoice = '';
   public nametypechoice = '';
+  public statuschoice = true;
   public dayofweek = [
     { Name: 'Thứ 2', value: '2' }, { Name: 'Thứ 3', value: '3' },
     { Name: 'Thứ 4', value: '4' }, { Name: 'Thứ 5', value: '5' },
@@ -38,7 +45,7 @@ export class ModalmusiccomponentComponent implements OnInit {
     { Name: 'Tháng 11', value: '11' }, { Name: 'Tháng 12', value: '12' },
   ];
   public dayofmonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
+  public status = [{ Name: 'Đang hoạt động', value: true}, { Name: 'Dừng hoạt động', value: false},]
   constructor(public dialog: MatDialog, private serverHttp: MusicService) { }
 
   ngOnInit(): void {
@@ -48,22 +55,22 @@ export class ModalmusiccomponentComponent implements OnInit {
     this.fileToUpload = event.target.files[0];
     console.log('file', this.fileToUpload);
     let formData = new FormData();
-    formData.set("name",this.fileToUpload.name);
-      formData.set("file",this.fileToUpload.file);
+    formData.get(this.fileToUpload.File);
       this.serverHttp.UploadFile(formData).subscribe((result) => {
         if(result)
         this._uploadFileId = result.id;
         console.log('file',  this._uploadFileId);
       });
   }
-  // this.serverHttp.UploadFile(FormData).subscribe((result)=>{
-  //   this._uploadFileId = result.Id;
-  // });
   //tạo mới
   createmusic(data: any) {
-    this.serverHttp.CreateMusic(data).subscribe((result) => {
+    console.log(data);
+    console.log('code',this.nusicinfoForm.value.typeMusicCode);
+    console.log('choice',this.statuschoice);
+    this.InputVar.nativeElement.value = "";
+    // this.serverHttp.CreateMusic(data).subscribe((result) => {
       
-    })
+    // })
   }
   //sửa 
   updateMusic(data: any) {
@@ -76,7 +83,7 @@ export class ModalmusiccomponentComponent implements OnInit {
     this.dialog.closeAll();
   }
   radioChangeHandler(event: any) {
-    this.typechoice = event.target.value;
+    this.typechoice = event.target.value;    
     if (this.typechoice.trim() == 'MUSICDAY') {
       this.nametypechoice = 'Nhạc một lần';
       this.ShowContent = 1;
@@ -87,7 +94,15 @@ export class ModalmusiccomponentComponent implements OnInit {
     }
     if (this.typechoice.trim() == 'MUSICYEAR') {
       this.nametypechoice = 'Nhạc theo năm';
-      this.ShowContent = 3;
+      this.ShowContent = 3;      
     }
+    this.nusicinfoForm.value.typeMusicCode = this.typechoice;
+  }
+  statusradioChangeHandler(event: any) {
+    this.statuschoice =  event.target.value;    
+   this.nusicinfoForm.value.status = this.statuschoice;    
+  }
+  cleardata(){
+    
   }
 }

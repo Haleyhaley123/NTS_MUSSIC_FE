@@ -14,7 +14,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatNativeDateModule} from  '@angular/material/core';
-import { TestComponent } from './components/test/test.component';
+import {TestComponent } from './components/test/test.component';
 import { ModalmusiccomponentComponent } from './modals/modalmusiccomponent/modalmusiccomponent.component';
 import {MatIconModule} from '@angular/material/icon';
 
