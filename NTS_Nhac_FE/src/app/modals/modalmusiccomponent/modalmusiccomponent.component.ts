@@ -14,31 +14,28 @@ export class ModalmusiccomponentComponent implements OnInit {
   
   public databinding = new MusicBinding();
   public showdata = new ShowData();
+  public datapayload = new MusicPayload();
   constructor(public dialog: MatDialog, private serverHttp: MusicService) { }
 
   ngOnInit(): void {
   }
   
   //tạo mới
-  createmusic() {
-    let datapayload = new MusicPayload();
-    datapayload.musicContent = this.databinding.Content;
-    datapayload.typeMusicCode = this.databinding.typechoice.trim();
-    datapayload.status = this.databinding.statuschoice;
-    datapayload.uploadFileId =  this.databinding._uploadFileId;
+  createmusic() {   
+    this.datapayload.typeMusicCode = this.databinding.typechoice.trim();
     if (this.databinding.typechoice.trim() == 'MUSICDAY') {
-      datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
-      datapayload.datePlay = this.databinding.DatePlay;
+      this.datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
+      this.datapayload.datePlay = this.databinding.DatePlay;
     }
     if (this.databinding.typechoice.trim() == 'MUSICMONTH') {
-      datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
-      datapayload.datePlay =  this.databinding.DayofWeek;     
+      this.datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
+      this.datapayload.datePlay =  this.databinding.DayofWeek;       
     }
     if (this.databinding.typechoice.trim() == 'MUSICYEAR') {
-      datapayload.timePlay = this.databinding.DayofmonthChoice;
-      datapayload.datePlay =this.databinding.MonthChoice;      
+      this.datapayload.timePlay = this.databinding.DayofmonthChoice;
+      this.datapayload.datePlay =this.databinding.MonthChoice;      
     }   
-    this.serverHttp.CreateMusic(datapayload).subscribe((result) => {
+    this.serverHttp.CreateMusic(this.datapayload).subscribe((result) => {
       if(result.data != null){
         alert('Thêm mới thành công');
       }else{
@@ -60,7 +57,7 @@ export class ModalmusiccomponentComponent implements OnInit {
     let formData = new FormData();
     formData.append('files', this.databinding.fileToUpload);
     this.serverHttp.UploadFile(formData).subscribe((result) => {
-      this.databinding._uploadFileId = result.id;
+      this.datapayload.uploadFileId = result.id;
     });
     
     
@@ -85,7 +82,7 @@ export class ModalmusiccomponentComponent implements OnInit {
 
   }
   onChangeStatus(event: any) {
-    this.databinding.statuschoice = Boolean(event.target.value);
+    this.datapayload.status = Boolean(event.target.value);
   }
   onChangedayofweek(event: any) {  
     console.log('đây là kiểm tra', event.target.value.checked);

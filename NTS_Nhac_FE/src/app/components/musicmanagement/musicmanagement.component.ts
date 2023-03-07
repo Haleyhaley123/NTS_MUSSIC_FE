@@ -4,18 +4,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ModalmusiccomponentComponent } from 'src/app/modals/modalmusiccomponent/modalmusiccomponent.component';
 import { FilterMusic, ShowData } from 'src/app/models/musicmodel';
+import { DateAdapter } from '@angular/material/core/datetime';
 @Component({
   selector: 'app-musicmanagement',
   templateUrl: './musicmanagement.component.html',
   styleUrls: ['./musicmanagement.component.css']
 })
 export class MusicmanagementComponent{ 
-  constructor(private serverHttp: MusicService,public dialog: MatDialog ) { } 
+  constructor(private serverHttp: MusicService,public dialog: MatDialog) { } 
   public ispopupAdd = false;
   public total = 0;
   public ListMusic = null;
   public filter = new FilterMusic();
-  public numberpaging = [1];
+  public numberpaging = [1]; 
   ngOnInit(): void {
     this.getlist();    
   } 

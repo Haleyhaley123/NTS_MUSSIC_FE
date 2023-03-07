@@ -5,17 +5,13 @@ export class MusicBinding{
     public DayofWeek = '';
     public MonthChoice = '';
     public DayofmonthChoice = '';
-    public Content = '';
     public Status = '';
-    public TypeMusicCode = '';
     public UploadFileId = '';
     public fileToUpload: any;
     public namefile: any;
-    public _uploadFileId = '';
     public ShowContent = 0;
     public typechoice = '';
     public nametypechoice = '';
-    public statuschoice = true;
 }
 export class FilterMusic{
   public content = '';
@@ -29,7 +25,7 @@ export class MusicPayload{
     public timePlay = '';
     public datePlay = '';
     public musicContent = '';
-    public status: any;
+    public status = true;
     public typeMusicCode = '' ;      
     public uploadFileId = ' ';      
     public isDeleted = false;
@@ -54,6 +50,17 @@ export class ShowData{
       public status = [{ Name: 'Đang hoạt động', value: true }, { Name: 'Dừng hoạt động', value: false },]
       
 }
+export const FormatDate = {
+  parse: {
+      dateInput: 'LL'
+  },
+  display: {
+      dateInput: 'YYYY-MM-DD',
+      monthYearLabel: 'YYYY',
+      dateA11yLabel: 'LL',
+      monthYearA11yLabel: 'YYYY'
+  }
+};
    
 
 
