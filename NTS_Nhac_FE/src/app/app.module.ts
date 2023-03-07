@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatNativeDateModule} from  '@angular/material/core';
 import { ModalmusiccomponentComponent } from './modals/modalmusiccomponent/modalmusiccomponent.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -38,7 +39,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

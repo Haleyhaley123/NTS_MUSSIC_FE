@@ -38,7 +38,11 @@ export class ModalmusiccomponentComponent implements OnInit {
       datapayload.datePlay =this.databinding.MonthChoice;      
     }   
     this.serverHttp.CreateMusic(datapayload).subscribe((result) => {
-
+      if(result.data != null){
+        alert('Thêm mới thành công');
+      }else{
+        alert('Thêm mới thất bại');
+      }
     })
 
   }

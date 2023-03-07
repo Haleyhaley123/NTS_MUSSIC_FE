@@ -36,7 +36,12 @@ namespace MusicManagement.Controllers
                 response.Status = MConstants.MessageNotFound;
                 return response;
             }
-            response.Data = result;
+            int count = result.Count();
+            int numberPage = count % request.PageSize == 0 ? count / request.PageSize : count / request.PageSize + 1;
+            var items = result.Skip((request.PageNumber - 1) * request.PageSize).Take(request.PageSize)
+            .ToList();
+            items = items.OrderByDescending(e => e.CreatedAt).ToList();
+            response.Data = new{ Data = items, Paging = new {numberPage, request.PageSize } };
             return response;
         }
         [HttpPost("music/update")]

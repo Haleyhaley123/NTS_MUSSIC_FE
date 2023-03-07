@@ -17,6 +17,13 @@ export class MusicBinding{
     public nametypechoice = '';
     public statuschoice = true;
 }
+export class FilterMusic{
+  public content = '';
+  public pageSize = 10;
+  public pageNumber = 0;
+  public pageNumberfilter = 0;
+
+}
 export class MusicPayload{
     public musicId = '3fa85f64-5717-4562-b3fc-2c963f66afa6';
     public timePlay = '';
@@ -45,6 +52,7 @@ export class ShowData{
       ];
       public dayofmonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
       public status = [{ Name: 'Đang hoạt động', value: true }, { Name: 'Dừng hoạt động', value: false },]
+      
 }
    
 

@@ -2,7 +2,7 @@
   height: 100% ;   
 }
 .row{
-
+min-height: 650px;
 }
 .sidebar{
     background-color: #e03;
