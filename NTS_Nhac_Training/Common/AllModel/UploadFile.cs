@@ -17,6 +17,7 @@ namespace Common.AllModel
         public string Path { get; set; }    
         public string Url { get; set; }
         public string FileSize { get; set; }
+        public DateTime CreatedAt { get; set; }
 
     }
 }
