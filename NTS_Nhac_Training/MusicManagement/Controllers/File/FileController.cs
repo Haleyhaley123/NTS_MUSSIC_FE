@@ -38,7 +38,7 @@ namespace MusicManagement.Controllers.File
                     string file_physic_path = $"{upload_path}{file_virtual_path}";
                     using (var stream = System.IO.File.Create(file_virtual_path))
                     {
-                        await formFile.CopyToAsync();
+                        await formFile.CopyToAsync(stream);
                     }
                     if (file_name.Length > 0)
                     {
