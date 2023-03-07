@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormArray } from '@angular/forms';
+import { DateAdapter } from '@angular/material/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import {MusicBinding, MusicPayload, ShowData} from 'src/app/models/musicmodel';
 import { MusicService } from 'src/app/services/music.service';
@@ -100,3 +101,7 @@ export class ModalmusiccomponentComponent implements OnInit {
 
   }
 }
+function moment(yourDate: any) {
+  throw new Error('Function not implemented.');
+}
+

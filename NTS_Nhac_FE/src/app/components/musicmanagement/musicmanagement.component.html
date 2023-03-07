@@ -23,9 +23,10 @@
         </nav>
         <div>
           <button type="button" placement="bottom-left" triggers="manual" class="btn btn-filter"> Tìm kiếm theo ... <i
-            class="fas fa-caret-down"></i></button>
+            class="fas fa-caret-down"></i>
+          </button>
         <input type="text" [(ngModel)]="filter.content" style="width: 500px;" placeholder="Tìm kiếm loại nhạc theo nội dung">
-        <button _ngcontent-hst-c85="" class="btn btn-success" type="submit">
+        <button _ngcontent-hst-c85="" class="btn btn-success" type="submit" (click)="searchlist()">
           <i _ngcontent-hst-c85="" class="fa fa-search"></i> &nbsp;Tìm kiếm
         </button>
           <button _ngcontent-hst-c85="" class="btn btn-secondary" type="submit" (click)="refreshgetlist()"><i

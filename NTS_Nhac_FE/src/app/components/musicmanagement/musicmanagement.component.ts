@@ -96,9 +96,14 @@ export class MusicmanagementComponent{
       }
     });
   }  
-  refreshgetlist(){
-    this.filter.content = '';
+  searchlist(){
     this.getlist();
+
+  }
+  refreshgetlist(){
+    this.filter.content = ''
+    this.getlist();
+    
   }
 
 }
