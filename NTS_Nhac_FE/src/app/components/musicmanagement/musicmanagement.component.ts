@@ -12,7 +12,7 @@ import { FilterMusic, ShowData } from 'src/app/models/musicmodel';
 export class MusicmanagementComponent{ 
   constructor(private serverHttp: MusicService,public dialog: MatDialog ) { } 
   public ispopupAdd = false;
-  public total : any;
+  public total = 0;
   public ListMusic = null;
   public filter = new FilterMusic();
   public numberpaging = [1];

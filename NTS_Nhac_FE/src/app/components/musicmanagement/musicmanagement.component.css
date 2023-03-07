@@ -29,3 +29,12 @@ h4{
   text-align: center;
   justify-content: center
 }
+.music-add{
+  display: flex;
+  Flex-direction: row;
+  justify-content: space-between;
+}
+.label-total{
+}
+.bnt-add{
+}
