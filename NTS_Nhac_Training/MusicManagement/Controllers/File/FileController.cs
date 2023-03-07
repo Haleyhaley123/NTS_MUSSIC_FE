@@ -36,7 +36,7 @@ namespace MusicManagement.Controllers.File
                     string file_name = $"{Guid.NewGuid().ToString()}.mp3";
                     string file_virtual_path = $"{folder_virtual_path}/{file_name}";
                     string file_physic_path = $"{upload_path}{file_virtual_path}";
-                    using (var stream = System.IO.File.Create(file_virtual_path))
+                    using (var stream = System.IO.File.Create(file_physic_path))
                     {
                         await formFile.CopyToAsync(stream);
                     }
