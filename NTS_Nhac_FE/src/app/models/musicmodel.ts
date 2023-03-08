@@ -12,6 +12,7 @@ export class MusicBinding{
     public showContent = 0;
     public typeChoice = '';
     public nameTypeChoice = '';
+    public statusChoice: any;
 }
 export class FilterMusic{
   public content = '';
@@ -30,7 +31,7 @@ export class MusicPayload{
     public timePlay = '';
     public datePlay: any;
     public musicContent = '';
-    public status = true;
+    public status : any;
     public typeMusicCode = '' ;      
     public uploadFileId = ' ';      
     public isDeleted = false;

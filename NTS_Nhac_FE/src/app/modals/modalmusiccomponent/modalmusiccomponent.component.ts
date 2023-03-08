@@ -25,6 +25,7 @@ export class ModalmusiccomponentComponent implements OnInit {
   //tạo mới
   createmusic() {
     this.datapayload.typeMusicCode = this.databinding.typeChoice.trim();
+    this.datapayload.status = this.databinding.statusChoice;
     if( this.databinding.hourTimePlay != '' && this.databinding.minuteTimePlay != ''){
       this.datapayload.timePlay = this.databinding.hourTimePlay + ':' + this.databinding.minuteTimePlay;
     }      
@@ -45,7 +46,7 @@ export class ModalmusiccomponentComponent implements OnInit {
       if (result.data != null) {
         alert('Thêm mới thành công');
       } else {
-        alert('Thêm mới thất bại');
+        // alert('Thêm mới thất bại');
       }
     })
 
@@ -88,7 +89,7 @@ export class ModalmusiccomponentComponent implements OnInit {
 
   }
   onChangeStatus(event: any) {
-    this.datapayload.status = Boolean(event.target.value);
+    this.databinding.statusChoice = Boolean(event.target.value);
   }
   onChangedayofweek(event: any) {
     this.databinding.dayofWeek = this.databinding.dayofWeek.concat(',' + event.target.value);

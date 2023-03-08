@@ -24,7 +24,7 @@ namespace Reponsitory.Reponsitory
                         MusicId = Guid.NewGuid(),
                         TimePlay = request.TimePlay,
                         MusicContent = request.MusicContent,
-                        Status = true,
+                        Status = request.Status,
                         TypeMusicCode = request.TypeMusicCode,
                         UploadFileId = request.UploadFileId,
                         DatePlay = request.DatePlay,
