@@ -67,8 +67,9 @@
                 <td *ngIf="music.typeMusicCode.trim() =='MUSICMONTH'">Nhạc theo tháng</td>
                 <td *ngIf="music.typeMusicCode.trim() =='MUSICYEAR'">Nhạc theo năm</td>
                 <td>{{music.timePlay}}</td>
-                <!-- <td>{{music.datePlay  | date: 'dd/MM/yyyy'}}</td> -->
-                <td>{{music.datePlay}}</td>
+                <td *ngIf="music.typeMusicCode.trim() == 'MUSICDAY'"> {{music.datePlay | date: 'dd/MM/yyyy'}}</td>
+                <td *ngIf="music.typeMusicCode.trim() == 'MUSICMONTH'">{{music.datePlay}}</td>
+                <td *ngIf="music.typeMusicCode.trim() == 'MUSICYEAR'">{{music.datePlay}}</td>
                 <td>{{music.musicContent}}</td>
               </tr>
 
