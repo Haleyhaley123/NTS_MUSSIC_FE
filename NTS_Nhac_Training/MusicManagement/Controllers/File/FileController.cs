@@ -42,17 +42,25 @@ namespace MusicManagement.Controllers.File
                     }
                     if (file_name.Length > 0)
                     {
-                        var data = new UploadFile()
+                        try
                         {
-                           FileId = Guid.NewGuid(),
-                           Path = file_physic_path,
-                           Url = file_virtual_path,
-                           FileSize = "",
-                           CreatedAt = DateTime.Now,
-                        };
-                        _dataBaseContext.UploadFile.Add(data);
-                        await _dataBaseContext.SaveChangesAsync();
-                        return Ok(new { Id = data.FileId });
+                            var data = new UploadFile()
+                            {
+                                FileId = Guid.NewGuid(),
+                                Path = file_physic_path,
+                                Url = file_virtual_path,
+                                FileSize = "",
+                                CreatedAt = DateTime.Now,
+                            };
+                            _dataBaseContext.UploadFile.Add(data);
+                            await _dataBaseContext.SaveChangesAsync();
+                            return Ok(new { Id = data.FileId });
+                        }
+                        catch(Exception ex) 
+                        {
+                            return NotFound(ex);
+                        }
+                        
                     } 
                     
                 }

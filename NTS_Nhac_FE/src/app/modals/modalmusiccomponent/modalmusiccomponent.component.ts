@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormArray } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import {MusicBinding, MusicPayload, ShowData} from 'src/app/models/musicmodel';
+import { MusicBinding, MusicofYear, MusicPayload, ShowData } from 'src/app/models/musicmodel';
 import { MusicService } from 'src/app/services/music.service';
 
 @Component({
@@ -10,35 +10,41 @@ import { MusicService } from 'src/app/services/music.service';
   templateUrl: './modalmusiccomponent.component.html',
   styleUrls: ['./modalmusiccomponent.component.css']
 })
-export class ModalmusiccomponentComponent implements OnInit {    
-  
+export class ModalmusiccomponentComponent implements OnInit {
+
   public databinding = new MusicBinding();
   public showdata = new ShowData();
   public datapayload = new MusicPayload();
+  public musicofyear = new MusicofYear();
+  public datajson: any[] = [];
   constructor(public dialog: MatDialog, private serverHttp: MusicService) { }
 
   ngOnInit(): void {
   }
-  
+
   //tạo mới
-  createmusic() {   
-    this.datapayload.typeMusicCode = this.databinding.typechoice.trim();
-    if (this.databinding.typechoice.trim() == 'MUSICDAY') {
-      this.datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
-      this.datapayload.datePlay = this.databinding.DatePlay;
+  createmusic() {
+    this.datapayload.typeMusicCode = this.databinding.typeChoice.trim();
+    if( this.databinding.hourTimePlay != '' && this.databinding.minuteTimePlay != ''){
+      this.datapayload.timePlay = this.databinding.hourTimePlay + ':' + this.databinding.minuteTimePlay;
+    }      
+    if (this.databinding.typeChoice.trim() == 'MUSICDAY') {     
+      this.datapayload.datePlay = this.databinding.datePlay;
     }
-    if (this.databinding.typechoice.trim() == 'MUSICMONTH') {
-      this.datapayload.timePlay = this.databinding.HourTimePlay + ':' + this.databinding.MinuteTimePlay;
-      this.datapayload.datePlay =  this.databinding.DayofWeek;       
+    if (this.databinding.typeChoice.trim() == 'MUSICMONTH') {
+      
+      this.datapayload.datePlay = this.databinding.dayofWeek;
     }
-    if (this.databinding.typechoice.trim() == 'MUSICYEAR') {
-      this.datapayload.timePlay = this.databinding.DayofmonthChoice;
-      this.datapayload.datePlay =this.databinding.MonthChoice;      
-    }   
+    if (this.databinding.typeChoice.trim() == 'MUSICYEAR') {
+      if (this.musicofyear.monthPlay != '') {
+        this.datajson.push(this.musicofyear);
+      }
+      this.datapayload.datePlay = JSON.stringify(this.datajson);
+    }
     this.serverHttp.CreateMusic(this.datapayload).subscribe((result) => {
-      if(result.data != null){
+      if (result.data != null) {
         alert('Thêm mới thành công');
-      }else{
+      } else {
         alert('Thêm mới thất bại');
       }
     })
@@ -59,46 +65,48 @@ export class ModalmusiccomponentComponent implements OnInit {
     this.serverHttp.UploadFile(formData).subscribe((result) => {
       this.datapayload.uploadFileId = result.id;
     });
-    
-    
+
+
   }
   closemodal() {
     this.dialog.closeAll();
   }
   onChangtypemisic(event: any) {
-    this.databinding.typechoice = event.target.value;
-    if (this.databinding.typechoice.trim() == 'MUSICDAY') {
-      this.databinding.nametypechoice = 'Nhạc một lần';
-      this.databinding.ShowContent = 1;
+    this.databinding.typeChoice = event.target.value;
+    if (this.databinding.typeChoice.trim() == 'MUSICDAY') {
+      this.databinding.nameTypeChoice = 'Nhạc một lần';
+      this.databinding.showContent = 1;
     }
-    if (this.databinding.typechoice.trim() == 'MUSICMONTH') {
-      this.databinding.nametypechoice = 'Nhạc theo tuần';
-      this.databinding.ShowContent = 2;
+    if (this.databinding.typeChoice.trim() == 'MUSICMONTH') {
+      this.databinding.nameTypeChoice = 'Nhạc theo tuần';
+      this.databinding.showContent = 2;
     }
-    if (this.databinding.typechoice.trim() == 'MUSICYEAR') {
-      this.databinding.nametypechoice = 'Nhạc theo năm';
-      this.databinding.ShowContent = 3;
+    if (this.databinding.typeChoice.trim() == 'MUSICYEAR') {
+      this.databinding.nameTypeChoice = 'Nhạc theo năm';
+      this.databinding.showContent = 3;
     }
 
   }
   onChangeStatus(event: any) {
     this.datapayload.status = Boolean(event.target.value);
   }
-  onChangedayofweek(event: any) {  
-    console.log('đây là kiểm tra', event.target.value.checked);
-    this.databinding.DayofWeek =   this.databinding.DayofWeek.concat(',' + event.target.value);
+  onChangedayofweek(event: any) {
+    this.databinding.dayofWeek = this.databinding.dayofWeek.concat(',' + event.target.value);
   }
   onChangmonthplay(event: any) {
-    this.databinding.MonthChoice = this.databinding.MonthChoice.concat(',' + event.target.value);
+    if (this.musicofyear.dayofMonths != '') {
+      let data = new MusicofYear();
+      data.dayofMonths = this.musicofyear.dayofMonths;
+      data.monthPlay = this.musicofyear.monthPlay;
+      // var data= Object.assign({},this.musicofyear);
+      this.datajson.push(data);
+    }
+    this.musicofyear.dayofMonths = '';
+    this.musicofyear.monthPlay = '';
+    this.musicofyear.monthPlay = event.target.value;
   }
-  onChangeofmonth(event: any){
-    this.databinding.DayofmonthChoice = this.databinding.DayofmonthChoice.concat(',' + event.target.value);
+  onChangedayofmonth(event: any) {
+    this.musicofyear.dayofMonths = this.musicofyear.dayofMonths.concat(',' + event.target.value);
   }
-  cleardata() {
-
-  }
-}
-function moment(yourDate: any) {
-  throw new Error('Function not implemented.');
 }
 

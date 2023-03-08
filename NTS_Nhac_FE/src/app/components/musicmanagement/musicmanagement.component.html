@@ -67,7 +67,8 @@
                 <td *ngIf="music.typeMusicCode.trim() =='MUSICMONTH'">Nhạc theo tháng</td>
                 <td *ngIf="music.typeMusicCode.trim() =='MUSICYEAR'">Nhạc theo năm</td>
                 <td>{{music.timePlay}}</td>
-                <td>{{music.datePlay  | date: 'dd/MM/yyyy'}}</td>
+                <!-- <td>{{music.datePlay  | date: 'dd/MM/yyyy'}}</td> -->
+                <td>{{music.datePlay}}</td>
                 <td>{{music.musicContent}}</td>
               </tr>
 
@@ -101,7 +102,7 @@
               </ul>
             </div>
           </div>
-          <div _ngcontent-hst-c85="" class="col-md-12"><button _ngcontent-hst-c85="" class="btn btn-view btn-success" (click)="openDialog()">
+          <div _ngcontent-hst-c85="" class="col-md-12"><button _ngcontent-hst-c85="" class="btn btn-view btn-success">
             <i _ngcontent-hst-c85="" class="fas fa-plus"></i></button>&nbsp; <small _ngcontent-hst-c85="" class="padding-right-20" >Thêm loại nhạc</small>
             <button _ngcontent-hst-c85="" class="btn btn-view btn-warning"><i _ngcontent-hst-c85="" class="fa fa-edit"></i></button>&nbsp;
              <small _ngcontent-hst-c85="" class="padding-right-20">Chỉnh sửa loại nhạc</small>

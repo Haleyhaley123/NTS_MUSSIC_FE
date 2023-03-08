@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj": {}
+    "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj": {}
   },
   "projects": {
-    "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj": {
+    "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj",
+        "projectUniqueName": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\obj\\",
+        "projectPath": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\NhanTin\\.nuget\\packages\\",
+        "outputPath": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\NhanTin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -69,26 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj": {
+    "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj",
+        "projectUniqueName": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj",
         "projectName": "Reponsitory",
-        "projectPath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\obj\\",
+        "projectPath": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\Reponsitory.csproj",
+        "packagesPath": "C:\\Users\\NhanTin\\.nuget\\packages\\",
+        "outputPath": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Reponsitory\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\NhanTin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj": {
-                "projectPath": "D:\\NhanTinSoft\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj"
+              "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj": {
+                "projectPath": "D:\\NTS_MUSSIC_FE\\NTS_Nhac_Training\\Common\\Common.csproj"
               }
             }
           }
@@ -145,7 +136,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -154,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -26,7 +26,7 @@ export class MusicmanagementComponent{
       maxWidth: '100vw',
       maxHeight: '100vh',
       height: '65%',
-      width: '50%',
+      width: '100%',
      // panelClass: 'full-screen-modal'
     });
     // this.dialog.open(ModalmusiccomponentComponent ,
@@ -46,9 +46,9 @@ export class MusicmanagementComponent{
     this.getlist();
   }
   onclickIncreasePage(){
-    if(this.numberpaging[this.numberpaging.length -1] < this.filter.pageNumberfilter){
+    if(this.numberpaging[this.numberpaging.length -1] < this.filter.pageNumberFilter){
       this.numberpaging.shift();   
-      if(this.numberpaging[this.numberpaging.length -1]< this.filter.pageNumberfilter && this.numberpaging.length < 3){
+      if(this.numberpaging[this.numberpaging.length -1]< this.filter.pageNumberFilter && this.numberpaging.length < 3){
         this.numberpaging.push(this.numberpaging[1]+ 1);
       }
     }
@@ -56,32 +56,32 @@ export class MusicmanagementComponent{
    onclickReducePage(){    
     if(this.numberpaging[this.numberpaging.length -1] > 3){
       this.numberpaging.pop();    
-      if(this.numberpaging[this.numberpaging.length -1]<= this.filter.pageNumberfilter && this.numberpaging.length <3){
+      if(this.numberpaging[this.numberpaging.length -1]<= this.filter.pageNumberFilter && this.numberpaging.length <3){
         this.numberpaging.unshift(this.numberpaging[0]- 1);
       }
     }
    }
    onclickStartpage(){
-    if(this.filter.pageNumberfilter> 3){
+    if(this.filter.pageNumberFilter> 3){
       this.numberpaging = [1, 2, 3];
     }else{
-      this.numberpaging = [1,this.filter.pageNumberfilter]
+      this.numberpaging = [1,this.filter.pageNumberFilter]
     }
    }
    onclickEndpage(){
-    if(this.numberpaging[this.numberpaging.length - 1] < this.filter.pageNumberfilter){
-      this.numberpaging = [this.filter.pageNumberfilter - 2,this.filter.pageNumberfilter - 1,this.filter.pageNumberfilter]
+    if(this.numberpaging[this.numberpaging.length - 1] < this.filter.pageNumberFilter){
+      this.numberpaging = [this.filter.pageNumberFilter - 2,this.filter.pageNumberFilter - 1,this.filter.pageNumberFilter]
     }
    }
   //lấy danh sách
   getlist(){
     this.serverHttp.GetList(this.filter).subscribe((result)=> {
       this.ListMusic = result.data.data;
-      this.total = result.data.data.length;
-      this.filter.pageNumberfilter = result.data.paging.numberPage;    
-      if(this.filter.pageNumberfilter >1){
-        for(let i = 1; i<this.filter.pageNumberfilter; i++){
-          if(this.numberpaging.length< this.filter.pageNumberfilter && this.numberpaging.length<3) {
+      this.total = result.data.paging.count;
+      this.filter.pageNumberFilter = result.data.paging.numberPage;    
+      if(this.filter.pageNumberFilter >1){
+        for(let i = 1; i<this.filter.pageNumberFilter; i++){
+          if(this.numberpaging.length< this.filter.pageNumberFilter && this.numberpaging.length<3) {
             this.numberpaging.push(this.numberpaging[0]+ i);
           }
         }  

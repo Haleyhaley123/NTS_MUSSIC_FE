@@ -41,7 +41,7 @@ namespace MusicManagement.Controllers
             var items = result.Skip((request.PageNumber - 1) * request.PageSize).Take(request.PageSize)
             .ToList();
             items = items.OrderByDescending(e => e.CreatedAt).ToList();
-            response.Data = new{ Data = items, Paging = new {numberPage, request.PageSize } };
+            response.Data = new{ Data = items, Paging = new {numberPage, request.PageSize , count } };
             return response;
         }
         [HttpPost("music/update")]
